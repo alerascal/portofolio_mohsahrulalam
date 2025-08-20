@@ -1,0 +1,187 @@
+.nav {
+	transition: all 0.5s;
+
+	&__wrapper {
+		padding: 5.4rem 0 1rem 0;
+		transition: all 0.5s;
+	}
+
+	&__logo {
+		width: 12.6rem;
+		height: auto;
+
+		img {
+			@include img-size;
+		}
+	}
+
+	&__list {
+		@media only screen and (max-width: $tab-land) {
+			display: none;
+		}
+	}
+
+	&__link {
+		font-size: 1.8rem;
+		color: $color-black;
+		font-family: $font-secondary !important;
+		transition: all 0.3s;
+	}
+	&__link.active,
+	&__link:hover {
+		color: $color-primary-landing-1;
+	}
+
+	.btn {
+		padding: 1rem 2rem;
+		background-color: $color-primary-landing-1;
+		border: 2px solid $color-primary-landing-1;
+		text-transform: capitalize;
+		color: $color-white;
+		font-weight: 400;
+		transition: all 0.5s;
+
+		&:hover {
+			background-color: transparent;
+			color: $color-primary-landing-1;
+		}
+
+		@media only screen and (max-width: $tab-land) {
+			display: none;
+		}
+	}
+
+	.btn-bar {
+		border: none;
+		outline: none;
+		background-color: transparent;
+
+		.icon {
+			fill: $color-primary-landing-1;
+		}
+	}
+
+	.mbl-nav {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 50%;
+		height: 100%;
+		padding: 2rem;
+		background-color: $color-primary-landing-1;
+		z-index: 20;
+		transform: translateX(100%);
+		transition: all 0.5s;
+
+		@media only screen and (max-width: $mbl-land) {
+			width: 100%;
+		}
+
+		.btn-close-sidebar {
+			position: absolute;
+			top: 2rem;
+			left: 2rem;
+			background-color: transparent;
+
+			i {
+				color: $color-white;
+				font-size: 3rem;
+			}
+		}
+
+		&__list {
+			position: absolute;
+			top: 12rem;
+			left: 50%;
+			transform: translateX(-50%);
+			text-align: center;
+		}
+
+		&__link {
+			font-size: 3rem;
+			color: $color-white;
+			border-bottom: 2px solid transparent;
+			padding: 0 6px;
+			transition: all 0.3s;
+		}
+		&__link.active,
+		&__link:hover {
+			border-bottom: 2px solid $color-white;
+		}
+	}
+
+	.mblNav-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.362);
+		z-index: 19;
+		transform: translateX(-100%);
+		transition: all 0.3s;
+	}
+}
+
+.show-sidebar {
+	.mbl-nav {
+		transform: translateX(0);
+	}
+
+	.mblNav-overlay {
+		transform: translateX(0);
+	}
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: $color-white;
+	z-index: 50;
+	box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px 0px;
+
+	.nav__wrapper {
+		padding: 1rem 0;
+	}
+}
+
+// back to top button
+.btn-scroll-top {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	border: 2px solid $color-primary-landing-1;
+	background-color: $color-primary-landing-1;
+	height: 4.8rem;
+	width: 4.8rem;
+	border-radius: 50%;
+	@include flex-center;
+	z-index: 50;
+	transition: all 0.3s;
+	opacity: 0;
+	visibility: hidden;
+
+	i {
+		font-size: 3rem;
+		color: $color-white;
+		transform: rotate(180deg);
+		transition: all 0.3s;
+	}
+
+	&:hover,
+	&:active {
+		background-color: transparent;
+		border: 2px solid $color-primary-landing-1;
+
+		i {
+			color: $color-primary-landing-1;
+		}
+	}
+}
+
+.show-btn {
+	opacity: 1;
+	visibility: visible;
+}

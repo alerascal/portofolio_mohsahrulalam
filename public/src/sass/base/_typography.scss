@@ -1,0 +1,145 @@
+h1.heading {
+	color: $color-primary-landing-1;
+	font-family: $font-primary;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 10rem;
+	line-height: 13.6rem;
+
+	@media only screen and (max-width: $tab-land) {
+		font-size: 8rem;
+	}
+	@media only screen and (max-width: $mbl-land) {
+		font-size: 6rem;
+	}
+}
+
+h2.heading {
+	color: $color-black;
+	font-family: $font-primary;
+	font-weight: 500;
+	font-size: 4.8rem;
+	text-transform: capitalize;
+	color: $color-white;
+
+	@media only screen and (max-width: $tab-land) {
+		font-size: 3.8rem;
+	}
+	@media only screen and (max-width: $mbl-land) {
+		font-size: 3rem;
+	}
+}
+
+// h3.heading {
+// 	font-weight: 600;
+// 	font-size: 2.4rem;
+// 	line-height: 3.3rem;
+// 	font-family: $font-primary;
+
+// 	@media only screen and (max-width: $tab-land) {
+// 		font-size: 2.2rem;
+// 		line-height: 3rem;
+// 	}
+// 	@media only screen and (max-width: $mbl-land) {
+// 		font-size: 2rem;
+// 		line-height: 2.8rem;
+// 	}
+// }
+
+h4.heading {
+	font-size: 2.8rem;
+	color: $color-black;
+	font-family: $font-primary;
+	font-weight: 400;
+	line-height: 2.7rem;
+	text-transform: capitalize;
+
+	@media only screen and (max-width: $tab-land) {
+		font-size: 2.4rem;
+	}
+	@media only screen and (max-width: $mbl-land) {
+		font-size: 2.2rem;
+	}
+}
+
+h5.heading {
+	font-size: 2.4rem;
+	color: $color-black;
+	font-family: $font-primary;
+	line-height: 2rem;
+	font-weight: 400;
+	letter-spacing: 0.1px;
+	color: $color-black;
+
+	@media only screen and (max-width: $tab-land) {
+		font-size: 2.2rem;
+	}
+	@media only screen and (max-width: $mbl-land) {
+		font-size: 2rem;
+	}
+}
+
+h6.heading {
+	font-size: 1.4rem;
+	color: $color-black;
+	font-family: $font-primary;
+	line-height: 1.8rem;
+	font-weight: 400;
+}
+
+.text {
+	font-size: 1.8rem;
+	font-weight: 400;
+	font-family: $font-secondary;
+	color: $color-gray;
+	line-height: 150%;
+
+	@media only screen and (max-width: $tab-land) {
+		font-size: 1.6rem;
+	}
+}
+
+a:link,
+a:visited {
+	font-size: 1.8rem;
+	font-weight: 500;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-family: $font-secondary;
+	color: $color-black;
+}
+
+.section-black {
+	background-color: $color-black;
+
+	h2 {
+		color: $color-primary-landing-1 !important;
+	}
+
+	.text {
+		color: $color-light-gray;
+	}
+}
+
+@mixin pos-center {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin img-size {
+	height: 100%;
+	width: 100%;
+}
+
+@mixin icon-vector {
+	height: 2rem;
+	width: 2rem;
+}

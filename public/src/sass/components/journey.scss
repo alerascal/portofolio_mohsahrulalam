@@ -1,0 +1,15 @@
+.journey-section {
+	.journey {
+		color: #fff;
+		&__img {
+			height: 13.7rem;
+			width: 13.7rem;
+			margin: 0 auto;
+			border-radius: 50%;
+
+			img {
+				@include img-size;
+			}
+		}
+	}
+}

@@ -1,0 +1,111 @@
+.contact-section {
+	.contact {
+		&__desc {
+			.title {
+				font-size: 1.8rem;
+				font-weight: 700;
+				margin-bottom: 0.6rem;
+			}
+
+			.list {
+				.item {
+					.icon {
+						height: 1.8rem;
+						width: 1.8rem;
+						fill: $color-primary-landing-1;
+					}
+
+					a {
+						color: $color-gray;
+						font-weight: 400;
+					}
+				}
+			}
+
+			.social-link {
+				border: 2px solid $color-primary-landing-1;
+				// padding: 0.6rem;
+				height: 2.8rem;
+				width: 2.8rem;
+				@include flex-center;
+
+				.icon {
+					height: 1.8rem;
+					width: 1.8rem;
+					fill: $color-primary-landing-1;
+				}
+			}
+		}
+
+		&__form {
+			@media only screen and (max-width: $tab-land) {
+				margin-top: 4rem;
+			}
+
+			.input-box {
+				// border: 1px solid red;
+				background: #f5f5f5;
+				border-radius: 6px;
+				width: 100%;
+				padding: 0 0 0 1rem;
+
+				label {
+					.icon {
+						height: 2rem;
+						width: 2rem;
+						fill: $color-gray;
+					}
+				}
+
+				input {
+					border: none;
+					outline: none;
+					background-color: transparent;
+					padding: 1.4rem 0;
+					font-size: 1.6rem;
+				}
+			}
+
+			textarea {
+				background: #f5f5f5;
+				border-radius: 6px;
+				width: 100%;
+				padding: 1.4rem 2rem;
+				border: none;
+				outline: none;
+				font-size: 1.6rem;
+			}
+
+			.btn-submit {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				background-color: $color-primary-landing-1;
+				border: 2px solid $color-primary-landing-1;
+				transition: all 0.3s;
+
+				i {
+					color: $color-white;
+					transition: all 0.3s;
+				}
+
+				.text {
+					color: $color-white;
+					transition: all 0.3s;
+				}
+
+				&:hover {
+					background-color: transparent;
+
+					i {
+						color: $color-primary-landing-1;
+					}
+
+					.text {
+						color: $color-primary-landing-1;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+	<head>
+		<!-- ========== PAGE TITLE ========== -->
+		<title>Maria landing page | home</title>
+		<!-- ========== META TAGS ========== -->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="coming soon template based on HTML5" />
+		<meta name="keywords" content="coming soon, under construction, countdown" />
+		<meta name="author" content="XXXXX" />
+
+		<!-- ========== CSS ========== -->
+		<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+		<!-- font link -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Roboto:wght@300;400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- bootstrap link -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+		/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="css/venobox.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<main class="main">
+			<!-- =============================== nav start =============================== -->
+			<nav class="nav">
+				<div class="container">
+					<div class="nav__wrapper d-flex justify-content-between align-items-center gap-4">
+						<figure class="nav__logo">
+							<a href="#header">
+								<img src="img/logo.png" alt="" />
+							</a>
+						</figure>
+						<ul class="nav__list d-flex align-items-center gap-5 d-none d-lg-flex">
+							<li class="nav__item">
+								<a href="#header" class="nav__link active">Home</a>
+							</li>
+							<li class="nav__item">
+								<a href="#about" class="nav__link">About</a>
+							</li>
+							<li class="nav__item">
+								<a href="#service" class="nav__link">services</a>
+							</li>
+							<li class="nav__item">
+								<a href="#portfolio" class="nav__link">portfolio</a>
+							</li>
+							<li class="nav__item">
+								<a href="#blog" class="nav__link">blog</a>
+							</li>
+							<li class="nav__item">
+								<a href="#contact" class="nav__link">contact</a>
+							</li>
+						</ul>
+						<button class="btn btn-contact d-none d-lg-block">contact me</button>
+						<button class="btn-bar d-lg-none">
+							<svg class="icon"><use xlink:href="img/icons.svg#icon-bars"></use></svg>
+						</button>
+					</div>
+				</div>
+
+				<div class="mblNav-overlay" onclick="closeSidebar()"></div>
+				<div class="mbl-nav d-lg-none">
+					<button class="btn-close-sidebar"><i class="bi bi-x"></i></button>
+					<ul class="mbl-nav__list">
+						<li class="mbl-nav__item">
+							<a href="#header" onclick="closeSidebar()" class="mbl-nav__link active">Home</a>
+						</li>
+						<li class="mbl-nav__item">
+							<a href="#about" onclick="closeSidebar()" class="mbl-nav__link">About</a>
+						</li>
+						<li class="mbl-nav__item">
+							<a href="#service" onclick="closeSidebar()" class="mbl-nav__link">services</a>
+						</li>
+						<li class="mbl-nav__item">
+							<a href="#portfolio" onclick="closeSidebar()" class="mbl-nav__link">portfolio</a>
+						</li>
+						<li class="mbl-nav__item">
+							<a href="#blog" onclick="closeSidebar()" class="mbl-nav__link">blog</a>
+						</li>
+						<li class="mbl-nav__item">
+							<a href="#contact" onclick="closeSidebar()" class="mbl-nav__link">contact</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- =============================== nav end =============================== -->
+
+			<!-- =============================== back to top button =============================== -->
+			<button class="btn btn-scroll-top">
+				<i class="bi bi-arrow-down-short"></i>
+			</button>
+
+			<!-- =============================== header start =============================== -->
+			<header class="header" id="header">
+				<div class="header__wrapper">
+					<div class="container">
+						<div class="hero d-flex justify-content-between align-items-center gap-5">
+							<div class="hero__content">
+								<img src="img/shape-1.png" alt="" class="shape shape-1" />
+								<img src="img/shape-1.png" alt="" class="shape shape-2" />
+								<h5 class="heading text-uppercase">hello</h5>
+								<h1 class="heading text-uppercase">I’m Maria</h1>
+								<h5 class="heading mb-2">Actor / Model / Performer</h5>
+								<div class="hero__img hero__img-mbl d-block d-lg-none">
+									<div class="like-box like-box-1">
+										<div class="point">100</div>
+										<div class="plus">+</div>
+										<p class="text">
+											Worldwide <br />
+											Clients
+										</p>
+									</div>
+									<div class="like-box like-box-2">
+										<div class="point">10</div>
+										<!-- <div class="plus">+</div> -->
+										<p class="text">
+											Years Of <br />
+											Experience
+										</p>
+									</div>
+									<img src="img/hero-img.png" class="hero-img" alt="" />
+									<img src="img/shape-2.png" alt="" class="shape shape-3" />
+								</div>
+								<p class="text mb-4">
+									Fashion that exists in everything. Style is a way to say who you are without
+									having to speak.
+								</p>
+								<div class="bottom d-flex align-items-center gap-5">
+									<button class="btn btn-work">
+										<span class="text">see my work</span>
+										<i class="bi bi-arrow-right"></i>
+									</button>
+									<div class="social d-flex align-items-center gap-3">
+										<a href="#" class="social__item">
+											<svg class="icon">
+												<use xlink:href="img/icons.svg#icon-facebook"></use>
+											</svg>
+										</a>
+										<a href="#" class="social__item">
+											<svg class="icon">
+												<use xlink:href="img/icons.svg#icon-instagram"></use>
+											</svg>
+										</a>
+
+										<a href="#" class="social__item">
+											<svg class="icon">
+												<use xlink:href="img/icons.svg#icon-twitter"></use>
+											</svg>
+										</a>
+
+										<a href="#" class="social__item">
+											<svg class="icon">
+												<use xlink:href="img/icons.svg#icon-linkedin2"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="hero__img">
+								<div class="like-box like-box-1">
+									<div class="point">100</div>
+									<div class="plus">+</div>
+									<p class="text">
+										Worldwide <br />
+										Clients
+									</p>
+								</div>
+								<div class="like-box like-box-2">
+									<div class="point">10</div>
+									<!-- <div class="plus">+</div> -->
+									<p class="text">
+										Years Of <br />
+										Experience
+									</p>
+								</div>
+								<img src="img/hero-img.png" class="hero-img" alt="" />
+								<img src="img/shape-2.png" alt="" class="shape shape-3" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- =============================== header end =============================== -->
+
+			<!-- =============================== about section start =============================== -->
+			<section class="section about-section" id="about">
+				<div class="container">
+					<div class="about row g-5 align-items-center">
+						<div class="col-12 col-md-6">
+							<div class="about__img">
+								<!-- <div class="img-border"></div> -->
+								<img src="img/placeholder/about-img.png" alt="" />
+							</div>
+						</div>
+						<div class="col-12 col-md-6">
+							<div class="about__content">
+								<p class="subtitle mb-1">about me</p>
+								<h2 class="heading mb-1">Senior Model Maria from New York</h2>
+								<p class="text mb-2">
+									Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec diam.
+									Felis nec sit a in sodales. Quis pellentesque nisl laoreet sagittis. Pharetra ac
+									aliquet egestas rhoncus aliquam
+								</p>
+
+								<div class="about__modal show-about">
+									<div class="about__btns d-flex align-items-center gap-5 mb-2">
+										<button class="btn btn-about">about me</button>
+										<button class="btn btn-skills">skills</button>
+									</div>
+									<div
+										class="content about-content justify-content-between align-items-start gap-3"
+									>
+										<div class="left">
+											<div class="label">name</div>
+											<p class="text mb-1">maria</p>
+
+											<div class="label">email</div>
+											<a href="mailto:info@maria.com" class="text mb-1">Info@maria.com</a>
+
+											<div class="label">phone</div>
+											<a href="tel:+123456789" class="text mb-1">+123 654 98752</a>
+										</div>
+										<div class="right">
+											<div class="label">age</div>
+											<p class="text mb-1">24 years</p>
+
+											<div class="label">education</div>
+											<p class="text mb-1">Computer Engineer</p>
+
+											<div class="label">profassion</div>
+											<p class="text mb-1">model</p>
+										</div>
+									</div>
+									<div
+										class="content skills-content justify-content-between align-items-start gap-3"
+									>
+										<ul id="skills">
+											<li>
+												<span class="text">Social Media model</span>
+												<div class="bar-container">
+													<span class="bar" data-bar='{ "color": "#FFB400" }'>
+														<span class="pct"><span class="number">70</span></span>
+													</span>
+												</div>
+											</li>
+											<li>
+												<span class="text">Modeling Agency</span>
+												<div class="bar-container">
+													<span class="bar" data-bar='{ "color": "#FFB400" }'>
+														<span class="pct"><span class="number">95</span></span>
+													</span>
+												</div>
+											</li>
+											<li>
+												<span class="text">Freelancer Modeling</span>
+												<div class="bar-container">
+													<span class="bar" data-bar='{ "color": "#FFB400" }'>
+														<span class="pct"><span class="number">55</span></span>
+													</span>
+												</div>
+											</li>
+											<li>
+												<span class="text">Model Management</span>
+												<div class="bar-container">
+													<span class="bar" data-bar='{ "color": "#FFB400" }'>
+														<span class="pct"><span class="number">75</span></span>
+													</span>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<button class="btn btn-download-cv">
+									<svg class="icon"><use xlink:href="img/icons.svg#icon-download"></use></svg>
+									<span class="text">download my cv</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- =============================== about section end===============================  -->
+
+			<!-- =============================== service section start =============================== -->
+			<section class="section service-section" id="service">
+				<img src="img/shape-1.png" alt="" class="shape shape-1" />
+				<img src="img/shape-1.png" alt="" class="shape shape-2" />
+
+				<div class="container mb-6">
+					<div class="title mb-1 d-flex align-items-center justify-content-center">
+						<img src="img/title-img-1.png" alt="" />
+						<h2 class="heading text-center">Maria Services</h2>
+						<img src="img/title-img-2.png" alt="" />
+					</div>
+					<p class="text text-center d-none d-lg-block">
+						Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec diam. Felis
+						nec sit a <br />
+						in sodales. Quis pellentesque nisl laoreet sagittis.
+					</p>
+					<p class="text text-center d-lg-none">
+						Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec diam. Felis
+						nec sit a in sodales. Quis pellentesque nisl laoreet sagittis.
+					</p>
+				</div>
+				<div class="service">
+					<div class="container">
+						<div class="row gx-3 gy-5">
+							<div class="col-12 col-sm-6 col-lg-4">
+								<div class="service__border">
+									<div class="service__item">
+										<img src="img/service-img-1.png" alt="" class="mb-2" />
+										<h4 class="heading mb-2">Ramp Shows</h4>
+										<p class="text">
+											Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec
+											diam. Felis nec sit a in sodales.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-sm-6 col-lg-4">
+								<div class="service__border">
+									<div class="service__item">
+										<img src="img/service-img-2.png" alt="" class="mb-2" />
+										<h4 class="heading mb-2">Photo Shoot</h4>
+										<p class="text">
+											Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec
+											diam. Felis nec sit a in sodales.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-sm-6 col-lg-4">
+								<div class="service__border">
+									<div class="service__item">
+										<img src="img/service-img-3.png" alt="" class="mb-2" />
+										<h4 class="heading mb-2">Product Ads</h4>
+										<p class="text">
+											Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec
+											diam. Felis nec sit a in sodales.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-sm-6 col-lg-4">
+								<div class="service__border">
+									<div class="service__item">
+										<img src="img/service-img-4.png" alt="" class="mb-2" />
+										<h4 class="heading mb-2">Photo Taken</h4>
+										<p class="text">
+											Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec
+											diam. Felis nec sit a in sodales.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-sm-6 col-lg-4">
+								<div class="service__border">
+									<div class="service__item">
+										<img src="img/service-img-5.png" alt="" class="mb-2" />
+										<h4 class="heading mb-2">Smiles</h4>
+										<p class="text">
+											Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec
+											diam. Felis nec sit a in sodales.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-sm-6 col-lg-4">
+								<div class="service__border">
+									<div class="service__item">
+										<img src="img/service-img-6.png" alt="" class="mb-2" />
+										<h4 class="heading mb-2">Modeling</h4>
+										<p class="text">
+											Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec
+											diam. Felis nec sit a in sodales.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--  =============================== service section end =============================== -->
+
+			<!-- =============================== shots section start =============================== -->
+			<section class="section shots-section section-black" id="shots">
+				<div class="container mb-6">
+					<div class="title mb-1 d-flex align-items-center justify-content-center">
+						<img src="img/title-img-1.png" alt="" />
+						<h2 class="heading text-center">MY AMAZING SHOTS</h2>
+						<img src="img/title-img-2.png" alt="" />
+					</div>
+					<p class="text text-center d-none d-lg-block">
+						Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec diam. Felis
+						nec sit a <br />
+						in sodales. Quis pellentesque nisl laoreet sagittis.
+					</p>
+				</div>
+
+				<div class="shots">
+					<!-- Slider main container -->
+					<div class="swiper shots-swiper-1">
+						<!-- Additional required wrapper -->
+						<div class="swiper-wrapper">
+							<!-- Slides -->
+							<div class="swiper-slide">
+								<div class="shots__item">
+									<figure class="shots__img">
+										<img src="img/placeholder/shots-img.png" alt="" />
+									</figure>
+									<div class="shots__desc">
+										<h4 class="heading">Maria Macias</h4>
+										<div class="line"></div>
+										<p class="text mt-1">
+											Lorem ipsum dolor sit amet consectetur. Morbi id cras felis.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="shots__item">
+									<figure class="shots__img">
+										<img src="img/placeholder/shots-img.png" alt="" />
+									</figure>
+									<div class="shots__desc">
+										<h4 class="heading">Maria Macias</h4>
+										<div class="line"></div>
+										<p class="text mt-1">
+											Lorem ipsum dolor sit amet consectetur. Morbi id cras felis.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="shots__item">
+									<figure class="shots__img">
+										<img src="img/placeholder/shots-img.png" alt="" />
+									</figure>
+									<div class="shots__desc">
+										<h4 class="heading">Maria Macias</h4>
+										<div class="line"></div>
+										<p class="text mt-1">
+											Lorem ipsum dolor sit amet consectetur. Morbi id cras felis.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="shots__item">
+									<figure class="shots__img">
+										<img src="img/placeholder/shots-img.png" alt="" />
+									</figure>
+									<div class="shots__desc">
+										<h4 class="heading">Maria Macias</h4>
+										<div class="line"></div>
+										<p class="text mt-1">
+											Lorem ipsum dolor sit amet consectetur. Morbi id cras felis.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="swiper shots-swiper-2" dir="rtl">
+						<!-- Additional required wrapper -->
+						<div class="swiper-wrapper">
+							<!-- Slides -->
+							<div class="swiper-slide">
+								<div class="shots__item">
+									<figure class="shots__img">
+										<img src="img/placeholder/shots-img.png" alt="" />
+									</figure>
+									<div class="shots__desc">
+										<h4 class="heading">Maria Macias</h4>
+										<div class="line"></div>
+										<p class="text mt-1">
+											Lorem ipsum dolor sit amet consectetur. Morbi id cras felis.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="shots__item">
+									<figure class="shots__img">
+										<img src="img/placeholder/shots-img.png" alt="" />
+									</figure>
+									<div class="shots__desc">
+										<h4 class="heading">Maria Macias</h4>
+										<div class="line"></div>
+										<p class="text mt-1">
+											Lorem ipsum dolor sit amet consectetur. Morbi id cras felis.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="shots__item">
+									<figure class="shots__img">
+										<img src="img/placeholder/shots-img.png" alt="" />
+									</figure>
+									<div class="shots__desc">
+										<h4 class="heading">Maria Macias</h4>
+										<div class="line"></div>
+										<p class="text mt-1">
+											Lorem ipsum dolor sit amet consectetur. Morbi id cras felis.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="shots__item">
+									<figure class="shots__img">
+										<img src="img/placeholder/shots-img.png" alt="" />
+									</figure>
+									<div class="shots__desc">
+										<h4 class="heading">Maria Macias</h4>
+										<div class="line"></div>
+										<p class="text mt-1">
+											Lorem ipsum dolor sit amet consectetur. Morbi id cras felis.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- =============================== shots section end =============================== -->
+
+			<!-- =============================== journey section start===============================  -->
+			<section class="section journey-section" id="journey">
+				<div class="container mb-6">
+					<div class="title mb-1 d-flex align-items-center justify-content-center">
+						<img src="img/title-img-1.png" alt="" />
+						<h2 class="heading text-center">MY JOURNEY EXPERIANCE</h2>
+						<img src="img/title-img-2.png" alt="" />
+					</div>
+					<p class="text text-center d-none d-lg-block">
+						Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec diam. Felis
+						nec sit a <br />
+						in sodales. Quis pellentesque nisl laoreet sagittis.
+					</p>
+				</div>
+
+				<div class="container">
+					<div class="journey row g-5">
+						<div class="col-12 col-sm-6 col-lg-4">
+							<div class="journey__item">
+								<figure class="journey__img mb-2 text-center">
+									<img src="img/journey-img-1.png" alt="" />
+								</figure>
+								<h4 class="heading mb-2 text-center">I Did Modeling</h4>
+								<p class="text text-center">
+									Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec diam.
+									Felis nec sit a in sodales.
+								</p>
+							</div>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-4">
+							<div class="journey__item">
+								<figure class="journey__img mb-2 text-center">
+									<img src="img/journey-img-2.png" alt="" />
+								</figure>
+								<h4 class="heading mb-2 text-center">I Did Photoshots</h4>
+								<p class="text text-center">
+									Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec diam.
+									Felis nec sit a in sodales.
+								</p>
+							</div>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-4">
+							<div class="journey__item">
+								<figure class="journey__img mb-2 text-center">
+									<img src="img/journey-img-3.png" alt="" />
+								</figure>
+								<h4 class="heading mb-2 text-center">I Did Advertisement</h4>
+								<p class="text text-center">
+									Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec diam.
+									Felis nec sit a in sodales.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- =============================== journey section end =============================== -->
+
+			<!-- =============================== portfolio section start =============================== -->
+			<section class="section portfolio-section section-black" id="portfolio">
+				<div class="container mb-6">
+					<div class="title mb-1 d-flex align-items-center justify-content-center">
+						<img src="img/title-img-1.png" alt="" />
+						<h2 class="heading text-center">SEE MY PORTFOLIO</h2>
+						<img src="img/title-img-2.png" alt="" />
+					</div>
+					<p class="text text-center d-none d-lg-block">
+						Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec diam. Felis
+						nec sit a <br />
+						in sodales. Quis pellentesque nisl laoreet sagittis.
+					</p>
+				</div>
+
+				<div class="container">
+					<div class="portfolio">
+						<div
+							class="portfolio__btns d-flex justify-content-center align-items-center flex-wrap gap-5 mb-6"
+						>
+							<button class="btn btn-filter filter" data-filter="all">All</button>
+							<button class="btn btn-filter filter" data-filter=".Modeling">Modeling</button>
+							<button class="btn btn-filter filter" data-filter=".Fashion">Fashion</button>
+							<button class="btn btn-filter filter" data-filter=".Ads">Ads</button>
+							<button class="btn btn-filter filter" data-filter=".Awards">Awards</button>
+						</div>
+						<div class="portfolio__mix">
+							<div class="mix Modeling Ads Awards" data-myorder="1">
+								<div class="portfolio__item">
+									<figure class="portfolio__img">
+										<img src="img/placeholder/portfolio-img.png" alt="" />
+										<div class="overlay">
+											<a class="venobox btn btn-plus" href="img/placeholder/portfolio-img.png">
+												<i class="bi bi-plus-circle"></i>
+											</a>
+										</div>
+									</figure>
+									<div class="portfolio__desc">
+										<p class="text title">model</p>
+										<p class="text">Lorem ipsum dolor sit amet consectetur.</p>
+									</div>
+								</div>
+							</div>
+							<div class="mix Fashion Ads Modeling" data-myorder="2">
+								<div class="portfolio__item">
+									<figure class="portfolio__img">
+										<img src="img/placeholder/portfolio-img.png" alt="" />
+										<div class="overlay">
+											<a class="venobox btn btn-plus" href="img/placeholder/portfolio-img.png">
+												<i class="bi bi-plus-circle"></i>
+											</a>
+										</div>
+									</figure>
+									<div class="portfolio__desc">
+										<p class="text title">model</p>
+										<p class="text">Lorem ipsum dolor sit amet consectetur.</p>
+									</div>
+								</div>
+							</div>
+							<div class="mix Ads Awards Fashion" data-myorder="2">
+								<div class="portfolio__item">
+									<figure class="portfolio__img">
+										<img src="img/placeholder/portfolio-img.png" alt="" />
+										<div class="overlay">
+											<a class="venobox btn btn-plus" href="img/placeholder/portfolio-img.png">
+												<i class="bi bi-plus-circle"></i>
+											</a>
+										</div>
+									</figure>
+									<div class="portfolio__desc">
+										<p class="text title">model</p>
+										<p class="text">Lorem ipsum dolor sit amet consectetur.</p>
+									</div>
+								</div>
+							</div>
+							<div class="mix Awards Modeling" data-myorder="2">
+								<div class="portfolio__item">
+									<figure class="portfolio__img">
+										<img src="img/placeholder/portfolio-img.png" alt="" />
+										<div class="overlay">
+											<a class="venobox btn btn-plus" href="img/placeholder/portfolio-img.png">
+												<i class="bi bi-plus-circle"></i>
+											</a>
+										</div>
+									</figure>
+									<div class="portfolio__desc">
+										<p class="text title">model</p>
+										<p class="text">Lorem ipsum dolor sit amet consectetur.</p>
+									</div>
+								</div>
+							</div>
+							<div class="mix Modeling Fashion" data-myorder="2">
+								<div class="portfolio__item">
+									<figure class="portfolio__img">
+										<img src="img/placeholder/portfolio-img.png" alt="" />
+										<div class="overlay">
+											<a class="venobox btn btn-plus" href="img/placeholder/portfolio-img.png">
+												<i class="bi bi-plus-circle"></i>
+											</a>
+										</div>
+									</figure>
+									<div class="portfolio__desc">
+										<p class="text title">model</p>
+										<p class="text">Lorem ipsum dolor sit amet consectetur.</p>
+									</div>
+								</div>
+							</div>
+							<div class="mix Awards Modeling Ads" data-myorder="2">
+								<div class="portfolio__item">
+									<figure class="portfolio__img">
+										<img src="img/placeholder/portfolio-img.png" alt="" />
+										<div class="overlay">
+											<a class="venobox btn btn-plus" href="img/placeholder/portfolio-img.png">
+												<i class="bi bi-plus-circle"></i>
+											</a>
+										</div>
+									</figure>
+									<div class="portfolio__desc">
+										<p class="text title">model</p>
+										<p class="text">Lorem ipsum dolor sit amet consectetur.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- =============================== journey section end =============================== -->
+
+			<!-- testimonial section start -->
+			<section class="section testimonial-section" id="testimonial">
+				<div class="container mb-6">
+					<div class="title mb-1 d-flex align-items-center justify-content-center">
+						<img src="img/title-img-1.png" alt="" />
+						<h2 class="heading text-center">CLIENT TESTIMONIALS</h2>
+						<img src="img/title-img-2.png" alt="" />
+					</div>
+					<p class="text text-center d-none d-lg-block">
+						Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec diam. Felis
+						nec sit a <br />
+						in sodales. Quis pellentesque nisl laoreet sagittis.
+					</p>
+				</div>
+				<div class="container">
+					<div class="testimonial">
+						<!-- Slider main container -->
+						<div class="swiper testimonial-swiper">
+							<!-- Additional required wrapper -->
+							<div class="swiper-wrapper">
+								<!-- Slides -->
+								<div class="swiper-slide">
+									<div class="testimonial__item">
+										<figure class="testimonial__img mb-2">
+											<img src="img/placeholder/testimonial-img.png" alt="" />
+										</figure>
+										<p class="text mb-2 pb-2 text-center">
+											Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec
+											diam. Felis nec sit a in sodales.
+										</p>
+										<h4 class="heading name mb-1 text-center">janice C. campbe</h4>
+										<div class="title text-center">model</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="testimonial__item">
+										<figure class="testimonial__img mb-2">
+											<img src="img/placeholder/testimonial-img.png" alt="" />
+										</figure>
+										<p class="text mb-2 pb-2 text-center">
+											Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec
+											diam. Felis nec sit a in sodales.
+										</p>
+										<h4 class="heading name mb-1 text-center">janice C. campbe</h4>
+										<div class="title text-center">model</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="testimonial__item">
+										<figure class="testimonial__img mb-2">
+											<img src="img/placeholder/testimonial-img.png" alt="" />
+										</figure>
+										<p class="text mb-2 pb-2 text-center">
+											Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec
+											diam. Felis nec sit a in sodales.
+										</p>
+										<h4 class="heading name mb-1 text-center">janice C. campbe</h4>
+										<div class="title text-center">model</div>
+									</div>
+								</div>
+							</div>
+							<!-- If we need pagination -->
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- =============================== testimonial section end =============================== -->
+
+			<!-- =============================== blog section start -->
+			<section class="section blog-section section-black" id="blog">
+				<div class="container mb-6">
+					<div class="title mb-1 d-flex align-items-center justify-content-center">
+						<img src="img/title-img-1.png" alt="" />
+						<h2 class="heading text-center">MY FASHION BLOG</h2>
+						<img src="img/title-img-2.png" alt="" />
+					</div>
+					<p class="text text-center d-none d-lg-block">
+						Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec diam. Felis
+						nec sit a <br />
+						in sodales. Quis pellentesque nisl laoreet sagittis.
+					</p>
+				</div>
+
+				<div class="container">
+					<div class="blog row g-5 align-items-stretch">
+						<div class="col-12 col-lg-6">
+							<div class="blog__left">
+								<figure class="blog__img">
+									<img src="img/placeholder/blog-img-1.png" alt="" />
+								</figure>
+								<div class="blog__desc">
+									<button class="btn btn-model">model</button>
+									<a href="#">
+										<h4 class="heading mb-2">
+											A cleansing hot Model or bath at Novia offers fully furnished to fit
+										</h4>
+									</a>
+									<p class="text pera">
+										Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec
+										diam. Felis nec sit a in sodales.
+									</p>
+
+									<ul class="list">
+										<li class="item d-flex justify-content-start align-items-center flex-wrap">
+											<div class="box d-flex align-items-center gap-3">
+												<svg class="icon icon-eye1">
+													<use xlink:href="img/icons.svg#icon-browser"></use>
+												</svg>
+												<span class="text date">Nav 30, 2022</span>
+											</div>
+											<div class="box d-flex align-items-center gap-3">
+												<svg class="icon"><use xlink:href="img/icons.svg#icon-browser"></use></svg>
+												<span class="text comments">1 Comments</span>
+											</div>
+											<div class="box d-flex align-items-center gap-3">
+												<svg class="icon"><use xlink:href="img/icons.svg#icon-eye1"></use></svg>
+												<span class="text views">321 Views</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-lg-6">
+							<div class="blog__right">
+								<div class="blog__list">
+									<div class="blog__item mb-2">
+										<figure class="blog__img">
+											<img src="img/placeholder/blog-img-2.png" alt="" />
+										</figure>
+										<div class="blog__desc">
+											<a href="#">
+												<h4 class="heading title mb-2">
+													A cleansing hot Model or bath at Novia offers fully furnished to fit
+												</h4>
+											</a>
+											<ul class="list">
+												<li
+													class="item d-flex justify-content-start align-items-center flex-wrap gap-5"
+												>
+													<div class="box d-flex align-items-center gap-3">
+														<svg class="icon icon-eye1">
+															<use xlink:href="img/icons.svg#icon-browser"></use>
+														</svg>
+														<span class="text date">Nav 30, 2022</span>
+													</div>
+													<div class="box d-flex align-items-center gap-3">
+														<svg class="icon"><use xlink:href="img/icons.svg#icon-eye1"></use></svg>
+														<span class="text views">321 Views</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="blog__item mb-2">
+										<figure class="blog__img">
+											<img src="img/placeholder/blog-img-2.png" alt="" />
+										</figure>
+										<div class="blog__desc">
+											<a href="#">
+												<h4 class="heading title mb-2">
+													A cleansing hot Model or bath at Novia offers fully furnished to fit
+												</h4>
+											</a>
+											<ul class="list">
+												<li
+													class="item d-flex justify-content-start align-items-center flex-wrap gap-5"
+												>
+													<div class="box d-flex align-items-center gap-3">
+														<svg class="icon icon-eye1">
+															<use xlink:href="img/icons.svg#icon-browser"></use>
+														</svg>
+														<span class="text date">Nav 30, 2022</span>
+													</div>
+													<div class="box d-flex align-items-center gap-3">
+														<svg class="icon"><use xlink:href="img/icons.svg#icon-eye1"></use></svg>
+														<span class="text views">321 Views</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="blog__item mb-2">
+										<figure class="blog__img">
+											<img src="img/placeholder/blog-img-2.png" alt="" />
+										</figure>
+										<div class="blog__desc">
+											<a href="#">
+												<h4 class="heading title mb-2">
+													A cleansing hot Model or bath at Novia offers fully furnished to fit
+												</h4>
+											</a>
+											<ul class="list">
+												<li
+													class="item d-flex justify-content-start align-items-center flex-wrap gap-5"
+												>
+													<div class="box d-flex align-items-center gap-3">
+														<svg class="icon icon-eye1">
+															<use xlink:href="img/icons.svg#icon-browser"></use>
+														</svg>
+														<span class="text date">Nav 30, 2022</span>
+													</div>
+													<div class="box d-flex align-items-center gap-3">
+														<svg class="icon"><use xlink:href="img/icons.svg#icon-eye1"></use></svg>
+														<span class="text views">321 Views</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="blog__item mb-2">
+										<figure class="blog__img">
+											<img src="img/placeholder/blog-img-2.png" alt="" />
+										</figure>
+										<div class="blog__desc">
+											<a href="#">
+												<h4 class="heading title mb-2">
+													A cleansing hot Model or bath at Novia offers fully furnished to fit
+												</h4>
+											</a>
+											<ul class="list">
+												<li
+													class="item d-flex justify-content-start align-items-center flex-wrap gap-5"
+												>
+													<div class="box d-flex align-items-center gap-3">
+														<svg class="icon icon-eye1">
+															<use xlink:href="img/icons.svg#icon-browser"></use>
+														</svg>
+														<span class="text date">Nav 30, 2022</span>
+													</div>
+													<div class="box d-flex align-items-center gap-3">
+														<svg class="icon"><use xlink:href="img/icons.svg#icon-eye1"></use></svg>
+														<span class="text views">321 Views</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="blog__item mb-2">
+										<figure class="blog__img">
+											<img src="img/placeholder/blog-img-2.png" alt="" />
+										</figure>
+										<div class="blog__desc">
+											<a href="#">
+												<h4 class="heading title mb-2">
+													A cleansing hot Model or bath at Novia offers fully furnished to fit
+												</h4>
+											</a>
+											<ul class="list">
+												<li
+													class="item d-flex justify-content-start align-items-center flex-wrap gap-5"
+												>
+													<div class="box d-flex align-items-center gap-3">
+														<svg class="icon icon-eye1">
+															<use xlink:href="img/icons.svg#icon-browser"></use>
+														</svg>
+														<span class="text date">Nav 30, 2022</span>
+													</div>
+													<div class="box d-flex align-items-center gap-3">
+														<svg class="icon"><use xlink:href="img/icons.svg#icon-eye1"></use></svg>
+														<span class="text views">321 Views</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="blog__item mb-2">
+										<figure class="blog__img">
+											<img src="img/placeholder/blog-img-2.png" alt="" />
+										</figure>
+										<div class="blog__desc">
+											<a href="#">
+												<h4 class="heading title mb-2">
+													A cleansing hot Model or bath at Novia offers fully furnished to fit
+												</h4>
+											</a>
+											<ul class="list">
+												<li
+													class="item d-flex justify-content-start align-items-center flex-wrap gap-5"
+												>
+													<div class="box d-flex align-items-center gap-3">
+														<svg class="icon icon-eye1">
+															<use xlink:href="img/icons.svg#icon-browser"></use>
+														</svg>
+														<span class="text date">Nav 30, 2022</span>
+													</div>
+													<div class="box d-flex align-items-center gap-3">
+														<svg class="icon"><use xlink:href="img/icons.svg#icon-eye1"></use></svg>
+														<span class="text views">321 Views</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="blog__item">
+										<figure class="blog__img">
+											<img src="img/placeholder/blog-img-2.png" alt="" />
+										</figure>
+										<div class="blog__desc">
+											<a href="#">
+												<h4 class="heading title mb-2">
+													A cleansing hot Model or bath at Novia offers fully furnished to fit
+												</h4>
+											</a>
+											<ul class="list">
+												<li
+													class="item d-flex justify-content-start align-items-center flex-wrap gap-5"
+												>
+													<div class="box d-flex align-items-center gap-3">
+														<svg class="icon icon-eye1">
+															<use xlink:href="img/icons.svg#icon-browser"></use>
+														</svg>
+														<span class="text date">Nav 30, 2022</span>
+													</div>
+													<div class="box d-flex align-items-center gap-3">
+														<svg class="icon"><use xlink:href="img/icons.svg#icon-eye1"></use></svg>
+														<span class="text views">321 Views</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- =============================== blog section end =============================== -->
+
+			<!-- =============================== contact section start =============================== -->
+			<section class="contact-section section" id="contact">
+				<div class="container mb-6">
+					<div class="title mb-1 d-flex align-items-center justify-content-center">
+						<img src="img/title-img-1.png" alt="" />
+						<h2 class="heading text-center">GET IN TOUCH</h2>
+						<img src="img/title-img-2.png" alt="" />
+					</div>
+					<p class="text text-center d-none d-lg-block">
+						Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec diam. Felis
+						nec sit a <br />
+						in sodales. Quis pellentesque nisl laoreet sagittis.
+					</p>
+				</div>
+				<div class="container">
+					<div class="contact row">
+						<div class="col-12 col-lg-4">
+							<div class="contact__desc">
+								<ul class="list mb-1">
+									<li class="item mb-1">
+										<p class="title">phone</p>
+										<p class="d-flex align-items-center gap-3">
+											<svg class="icon">
+												<use xlink:href="img/icons.svg#icon-call"></use>
+											</svg>
+											<a href="tel:+123456789">+123 654 98752</a>
+										</p>
+									</li>
+									<li class="item mb-1">
+										<p class="title">email</p>
+										<p class="d-flex align-items-center gap-3">
+											<svg class="icon">
+												<use xlink:href="img/icons.svg#icon-mail"></use>
+											</svg>
+											<a href="mailto:info@maria.com">Info@maria.com</a>
+										</p>
+									</li>
+									<li class="item mb-1">
+										<p class="title">location</p>
+										<p class="d-flex align-items-center gap-3">
+											<svg class="icon">
+												<use xlink:href="img/icons.svg#icon-location"></use>
+											</svg>
+											<span class="text">2124 14th St Meridian, MS 39301</span>
+										</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-12 col-lg-8">
+							<form class="contact__form">
+								<div class="d-flex align-items-center gap-5 mb-3">
+									<div class="input-box d-flex align-items-center gap-3">
+										<label for="name">
+											<svg class="icon"><use xlink:href="img/icons.svg#icon-person"></use></svg>
+										</label>
+										<input
+											type="text"
+											id="name"
+											name="name"
+											placeholder="your name"
+											class="w-100"
+										/>
+									</div>
+									<div class="input-box d-flex align-items-center gap-3">
+										<label for="email">
+											<svg class="icon"><use xlink:href="img/icons.svg#icon-mail"></use></svg>
+										</label>
+										<input
+											type="text"
+											id="email"
+											name="email"
+											placeholder="your email"
+											class="w-100"
+										/>
+									</div>
+								</div>
+								<textarea
+									name="message"
+									id="message"
+									cols="30"
+									rows="10"
+									placeholder="your message"
+									class="mb-2"
+								></textarea>
+
+								<button class="btn btn-submit">
+									<i class="bi bi-send"></i>
+									<span class="text">send message</span>
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- =============================== contact section end =============================== -->
+
+			<!-- =============================== footer start =============================== -->
+			<footer class="footer section-black">
+				<div class="container">
+					<div class="footer__wrapper">
+						<!-- <h2 class="heading mb-1 text-center">Maria</h2> -->
+						<figure class="footer__logo text-center">
+							<img src="img/logo-2.png" alt="" class="mb-1" />
+						</figure>
+						<p class="text mb-2 text-center d-none d-lg-block">
+							Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec diam.
+							Felis nec sit a <br />
+							in sodales. Quis pellentesque nisl laoreet sagittis.
+						</p>
+						<p class="text mb-2 text-center d-lg-none">
+							Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec diam.
+							Felis nec sit a <br />
+							in sodales. Quis pellentesque nisl laoreet sagittis.
+						</p>
+						<ul class="social d-flex align-items-center justify-content-center gap-4">
+							<li class="social__item">
+								<a href="#" class="social__link"
+									><svg class="icon">
+										<use xlink:href="img/icons.svg#icon-facebook"></use></svg
+								></a>
+							</li>
+							<li class="social__item">
+								<a href="#" class="social__link"
+									><svg class="icon">
+										<use xlink:href="img/icons.svg#icon-instagram"></use></svg
+								></a>
+							</li>
+							<li class="social__item">
+								<a href="#" class="social__link"
+									><svg class="icon">
+										<use xlink:href="img/icons.svg#icon-twitter"></use></svg
+								></a>
+							</li>
+							<li class="social__item">
+								<a href="#" class="social__link"
+									><svg class="icon">
+										<use xlink:href="img/icons.svg#icon-linkedin2"></use></svg
+								></a>
+							</li>
+						</ul>
+
+						<div class="footer__bottom d-flex justify-content-between align-items-center gap-3">
+							<p class="text copyright">
+								&copy; Copyright 2022 <a href="https://futureinltd.com/">@maria</a> All rights
+								reserved.
+							</p>
+							<div class="d-flex align-items-center gap-4">
+								<a href="#" class="footer__link">Terms & Condition</a>
+								<a href="#" class="footer__link">Privacy Policy</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- =============================== footer end =============================== -->
+		</main>
+
+		<!-- ========== JQUERY PLUGIN ========== -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+			crossorigin="anonymous"
+		></script>
+		<script src="js/venobox.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

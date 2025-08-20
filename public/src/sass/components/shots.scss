@@ -1,0 +1,80 @@
+.shots-section {
+	background-color: $color-black;
+
+	.shots {
+		&-swiper-1 {
+			margin-right: 14rem;
+			margin-bottom: 3rem;
+
+			@media only screen and (max-width: $tab-land) {
+				margin-right: 0;
+			}
+		}
+		&-swiper-2 {
+			margin-left: 14rem;
+
+			@media only screen and (max-width: $tab-land) {
+				margin-left: 0;
+			}
+		}
+
+		&__item {
+			position: relative;
+
+			&:hover {
+				.shots__desc {
+					opacity: 1;
+					visibility: visible;
+					transform: scale(1);
+				}
+			}
+		}
+
+		&__img {
+			width: 100%;
+			height: 23.4rem;
+			// height: 100%;
+
+			img {
+				@include img-size;
+				object-fit: cover;
+			}
+		}
+
+		&__desc {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba(34, 34, 34, 0.65);
+			height: 100%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 0 3rem;
+			opacity: 0;
+			visibility: hidden;
+			transform: scale(0.5);
+			transition: all 0.5s;
+
+			h4 {
+				text-align: center;
+				color: $color-white;
+				font-family: $font-secondary;
+				margin-bottom: 0.4rem;
+			}
+
+			.line {
+				height: 1px;
+				width: 3.8rem;
+				background-color: #ffb400;
+			}
+
+			.text {
+				text-align: center;
+				color: $color-white;
+			}
+		}
+	}
+}

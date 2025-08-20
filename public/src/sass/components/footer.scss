@@ -1,0 +1,44 @@
+.footer {
+	padding: 8rem 0 4.3rem 0;
+
+	// &__logo {
+	// 	margin: 0 auto;
+	// 	text-align: center;
+	// }
+	&__wrapper {
+		h2 {
+			color: $color-white !important;
+			font-size: 6.5rem;
+		}
+
+		.social {
+			margin-bottom: 9rem;
+			&__item {
+			}
+
+			&__link {
+				.icon {
+					height: 2rem;
+					width: 2rem;
+					fill: $color-primary-landing-1;
+				}
+			}
+		}
+	}
+
+	&__bottom {
+		@media only screen and (max-width: $tab-land) {
+			flex-direction: column;
+		}
+		.copyright {
+			a {
+				color: $color-light-gray;
+				font-weight: 400;
+			}
+		}
+	}
+
+	&__link {
+		color: $color-light-gray !important;
+	}
+}

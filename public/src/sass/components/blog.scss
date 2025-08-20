@@ -1,0 +1,130 @@
+.blog-section {
+	.row {
+		margin: 0;
+	}
+	.blog {
+		&__left {
+			background-color: $color-white;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			.text {
+				color: $color-gray;
+			}
+
+			.blog__img {
+				height: 100%;
+				width: 100%;
+				position: relative;
+				overflow: hidden;
+
+				@media only screen and (max-width: $mbl-land) {
+					height: 45rem;
+				}
+
+				img {
+					@include img-size;
+					transform: scale(1.1);
+				}
+			}
+
+			.blog__desc {
+				padding: 3rem 3.7rem;
+				background-color: $color-white;
+				position: relative;
+
+				.btn {
+					position: absolute;
+					top: -2rem;
+					left: 4.5rem;
+					background-color: $color-primary-landing-1;
+					border: 2px solid $color-primary-landing-1;
+					color: $color-white;
+					transition: all 0.3s;
+				}
+
+				h4 {
+					font-size: 2.8rem;
+					color: $color-black;
+					line-height: 3.8rem;
+				}
+
+				.pera {
+					border-bottom: 1px solid #979797;
+					padding-bottom: 2rem;
+				}
+
+				.list {
+					padding: 1.6rem 0 0 0;
+					.item {
+						gap: 1rem 0;
+						.box {
+							padding: 0 1.4rem;
+							// gap: 2rem 0rem;
+							&:not(:last-child) {
+								border-right: 1px solid $color-gray;
+							}
+
+							.icon {
+								fill: $color-gray;
+								height: 2.4rem;
+								width: 2.4rem;
+							}
+
+							.text {
+								color: $color-gray;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&__right {
+			height: 100%;
+		}
+
+		&__list {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 100%;
+		}
+
+		&__item {
+			display: grid;
+			grid-template-columns: max-content 1fr;
+			align-items: start;
+			gap: 1rem;
+		}
+		&__img {
+			height: 100%;
+			width: 11rem;
+
+			img {
+				@include img-size;
+				object-fit: cover;
+			}
+		}
+
+		&__desc {
+			h4 {
+				color: $color-white;
+				font-size: 1.8rem;
+			}
+
+			.list {
+				.icon {
+					height: 2.4rem;
+					width: 2.4rem;
+					fill: $color-light-gray;
+				}
+				.text {
+					color: $color-light-gray;
+				}
+			}
+		}
+	}
+}

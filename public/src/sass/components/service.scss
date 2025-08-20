@@ -1,0 +1,65 @@
+.title {
+	gap: 2rem;
+
+	img {
+		margin-top: 12px;
+	}
+	h2 {
+		color: $color-black;
+	}
+}
+
+.service-section {
+	padding: 10rem 0 !important;
+	position: relative;
+
+	.shape {
+		position: absolute;
+		z-index: 10;
+	}
+
+	.shape-1 {
+		top: 22rem;
+		left: 2rem;
+	}
+	.shape-2 {
+		bottom: 7rem;
+		right: 7rem;
+	}
+
+	.service {
+		&__border {
+			border: 6px solid transparent;
+			transform: rotate(0);
+			transition: all 0.3s;
+			border-radius: 12px;
+
+			&:hover {
+				border: 6px solid $color-primary-landing-1;
+				transform: rotate(11.28deg);
+
+				.service__item {
+					transform: rotate(-11.28deg);
+				}
+			}
+		}
+		&__item {
+			text-align: center;
+			padding: 2.7rem 4.1rem;
+			background: #ffffff;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+			border-radius: 12px;
+			transition: all 0.3s;
+			// transform: rotate(-11.28deg);
+
+			img {
+			}
+
+			h4 {
+			}
+
+			.text {
+			}
+		}
+	}
+}

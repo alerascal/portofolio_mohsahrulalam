@@ -1,0 +1,187 @@
+.about-section {
+	background-color: $color-black;
+	padding: 16rem 0 !important;
+
+	.about {
+		&__img {
+			position: relative;
+			width: 100%;
+			border: 8px solid $color-primary-landing-1;
+
+			img {
+				height: 100%;
+				width: 100%;
+				transform: translate(-4rem, -4rem);
+			}
+		}
+
+		&__content {
+			.subtitle {
+				color: $color-primary-landing-1;
+			}
+
+			h2 {
+				font-family: $font-secondary;
+			}
+			.text {
+				color: #c9c5c5;
+			}
+		}
+
+		&__modal {
+			.about-content {
+				display: none;
+			}
+
+			.skills-content {
+				display: none;
+			}
+			.content {
+				.label {
+					color: $color-white;
+					margin-bottom: 5px;
+				}
+
+				.text {
+					color: #c9c5c5;
+				}
+
+				a {
+					color: #c9c5c5;
+					display: inline-block;
+					font-weight: 400;
+				}
+			}
+
+			.skills-content {
+				#skills {
+					margin: 0 auto;
+					width: 100%;
+					// max-width: 960px;
+
+					li {
+						position: relative;
+						margin-bottom: 2.1rem;
+						// padding-left: 6px;
+
+						.text {
+							color: $color-white;
+							margin-bottom: 0.3rem;
+							display: inline-block;
+						}
+
+						.bar-container,
+						.bar {
+							position: absolute;
+							left: 0;
+							height: 8px;
+							border-radius: 6px;
+							content: '';
+						}
+
+						.bar-container {
+							bottom: -8px;
+							width: 100%;
+							background-color: #333;
+							text-align: right;
+
+							.bar {
+								top: 0;
+							}
+
+							.pct {
+								position: absolute;
+								top: -31px;
+								right: -13px;
+								opacity: 0;
+								transition: opacity 0.3s linear;
+								height: 2.8rem;
+								width: 2.8rem;
+								background-color: $color-black;
+								border: 3px solid $color-primary-landing-1;
+								color: $color-white !important;
+								font-size: 1.2rem;
+								border-radius: 50% 50% 50% 0%;
+								transform: rotate(318deg);
+								@include flex-center;
+
+								.number {
+									transform: rotate(-318deg);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.show-about {
+			.about-content {
+				display: flex;
+			}
+			.btn-about {
+				border-bottom: 1px solid $color-primary-landing-1;
+				color: $color-white;
+				// padding-bottom: 4px;
+			}
+		}
+
+		.show-skills {
+			.skills-content {
+				display: flex;
+			}
+			.btn-skills {
+				border-bottom: 1px solid $color-primary-landing-1;
+				color: $color-white;
+				// padding-bottom: 4px;
+			}
+		}
+
+		&__btns {
+			.btn {
+				padding: 0 0 3px 4px;
+				background-color: transparent;
+				border: none;
+				border-bottom: 1px solid transparent;
+				color: #c9c5c5;
+				border-radius: 0;
+			}
+		}
+
+		.btn-download-cv {
+			background-color: $color-primary-landing-1;
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			border: 2px solid $color-primary-landing-1;
+			transition: all 0.3s;
+			margin-top: 3rem;
+
+			.text {
+				color: $color-white;
+				transition: all 0.3s;
+			}
+
+			.icon {
+				height: 2rem;
+				width: 2rem;
+				fill: $color-white;
+				transition: all 0.3s;
+			}
+
+			&:hover {
+				background-color: transparent;
+
+				.text {
+					color: $color-primary-landing-1;
+				}
+
+				.icon {
+					height: 2rem;
+					width: 2rem;
+					fill: $color-primary-landing-1;
+				}
+			}
+		}
+	}
+}
