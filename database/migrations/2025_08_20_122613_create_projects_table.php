@@ -6,27 +6,32 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up()
-{
-    Schema::create('projects', function (Blueprint $table) {
-        $table->id();
-        $table->string('name');
-        $table->string('client');
-        $table->string('status');
-        $table->string('priority');
-        $table->date('deadline');
-        $table->integer('progress');
-        $table->timestamps();
-    });
-}
+    public function up(): void
+    {
+        Schema::create('projects', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('client')->nullable();
 
+            // Status: active, completed, pending, on-hold
+            $table->enum('status', ['active', 'completed', 'pending', 'on-hold'])->default('active');
 
-    /**
-     * Reverse the migrations.
-     */
+            // Priority: low, medium, high
+            $table->enum('priority', ['low', 'medium', 'high'])->default('medium');
+
+            $table->date('deadline')->nullable();
+            $table->unsignedTinyInteger('progress')->default(0); // 0-100
+
+            // Gambar/cover proyek
+            $table->string('cover_image')->nullable();
+
+            $table->timestamps();
+
+            // Index untuk pencarian cepat
+            $table->index(['status', 'priority']);
+        });
+    }
+
     public function down(): void
     {
         Schema::dropIfExists('projects');

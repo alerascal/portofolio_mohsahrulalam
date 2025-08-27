@@ -1,236 +1,494 @@
-@extends('layouts.frontend')
-
-@section('title', 'Home - Moh Sahrul Alamsyah')
-
+@extends('layouts.frontend') @section('title', 'Home - Moh Sahrul Alamsyah')
 @section('content')
-<!-- Hero -->
-    <section id="home" class="hero">
-      <div class="container content" data-aos="fade-up" data-aos-duration="900">
-        <span class="badge">Full Stack Developer</span>
-        <h1 class="title gradient-text">Moh Sahrul Alamsyah</h1>
-        <h2 class="subtitle">Crafting Modern Web Solutions</h2>
-        <p class="desc">Passionate about building scalable, user-friendly applications with cutting-edge technologies.</p>
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="container content" data-aos="fade-up" data-aos-duration="800">
+        <span class="badge">{{ $hero->badge }}</span>
+       <h1 class="title gradient-text"><span id="typed-title"></span></h1>
+        <h2 class="subtitle">{{ $hero->subtitle }}</h2>
+        <p class="desc"><span id="typed-desc"></span></p>
         <div class="actions">
-          <a class="btn btn-primary" href="#contact"><i class="fas fa-envelope"></i> Hire Me</a>
-          <a class="btn btn-secondary" href="#projects"><i class="fas fa-briefcase"></i> View Projects</a>
+            <a class="btn btn-primary" href="#contact"
+                ><i class="fas fa-envelope"></i> Hire Me</a
+            >
+            <a class="btn btn-secondary" href="#projects"
+                ><i class="fas fa-briefcase"></i> View Projects</a
+            >
         </div>
         <div class="stats">
-          <div class="stat" style="animation-delay: .05s">
-            <strong>5+</strong>
-            <span>Years Experience</span>
-          </div>
-          <div class="stat" style="animation-delay: .1s">
-            <strong>30+</strong>
-            <span>Projects Completed</span>
-          </div>
-          <div class="stat" style="animation-delay: .15s">
-            <strong>10+</strong>
-            <span>Happy Clients</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <span class="badge">About Me</span>
-          <h2 class="section-title gradient-text">Who I Am</h2>
-          <p class="section-desc">A dedicated Full Stack Developer with a passion for creating innovative web solutions.</p>
-        </div>
-        <div class="about">
-          <div data-aos="fade-right" data-aos-duration="900">
-            <h3 class="section-subtitle" style="font-size:28px; font-weight:800; margin:0 0 12px">My Journey</h3>
-            <p class="muted" style="font-size:18px">I'm Moh Sahrul Alamsyah, a Full Stack Developer with over 5 years of experience in building web applications. I specialize in creating seamless, user-friendly interfaces and robust backend systems.</p>
-            <div class="features" style="display:grid; gap:12px; margin-top:16px">
-              <div class="feature" data-aos="zoom-in" data-aos-delay="100">
-                <div class="ico"><i class="fas fa-code"></i></div>
-                <span><strong>Clean & Efficient Code</strong></span>
-              </div>
-              <div class="feature" data-aos="zoom-in" data-aos-delay="200">
-                <div class="ico" style="background: var(--secondary);"><i class="fas fa-rocket"></i></div>
-                <span><strong>Fast & Scalable Solutions</strong></span>
-              </div>
-              <div class="feature" data-aos="zoom-in" data-aos-delay="300">
-                <div class="ico" style="background: var(--accent);"><i class="fas fa-users"></i></div>
-                <span><strong>User-Centric Design</strong></span>
-              </div>
+            @foreach($hero->stats as $stat)
+            <div
+                class="stat"
+                data-aos="fade-up"
+                data-aos-delay="{{ $loop->index * 100 }}"
+            >
+                <strong>{{ $stat["value"] }}</strong>
+                <span>{{ $stat["label"] }}</span>
             </div>
-          </div>
-          <div class="about-visual" data-aos="fade-left" data-aos-duration="900">
-            <img src="https://images.unsplash.com/photo-1522444195799-478538b28823?q=80&w=1400&auto=format&fit=crop" alt="Moh Sahrul Alamsyah" />
-          </div>
+            @endforeach
         </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="section">
-      <div class="container">
+    </div>
+</section>
+<!-- About Section -->
+<section id="about" class="section">
+    <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <span class="badge">Skills</span>
-          <h2 class="section-title gradient-text">My Expertise</h2>
-          <p class="section-desc">A comprehensive set of tools and technologies I use to build modern web applications.</p>
+            <span class="badge">About Me</span>
+            <h2 class="section-title gradient-text">
+                {{ $abouts->title ?? 'Who I Am' }}
+            </h2>
         </div>
+
+        <div
+            class="about"
+            style="
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+                align-items: flex-start;
+            "
+        >
+            <!-- Kiri: Konten kotak -->
+            <div
+                data-aos="fade-right"
+                data-aos-duration="800"
+                style="
+                    flex: 1 1 400px;
+                    padding: 25px;
+                    border-radius: 15px;
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                "
+            >
+                <h3
+                    style="
+                        margin-bottom: 15px;
+                        font-size: 22px;
+                        font-weight: 700;
+                    "
+                >
+                    {{ $abouts->title ?? 'Who I Am' }}
+                </h3>
+
+                <p
+                    class="muted"
+                    style="
+                        font-size: 16px;
+                        line-height: 1.7;
+                        color: var(--primary);
+                    "
+                >
+                    {!! nl2br(e($abouts->description ?? 'Saya Moh Sahrul Alam
+                    Syah, Full Stack Developer...')) !!}
+                </p>
+
+                <!-- Fitur -->
+                <div style="display: grid; gap: 10px; margin-top: 18px">
+                    <div
+                        class="feature"
+                        data-aos="zoom-in"
+                        data-aos-delay="100"
+                    >
+                        <div class="ico"><i class="fas fa-code"></i></div>
+                        <span
+                            ><strong>Kode Bersih & Efisien</strong> – Menulis
+                            kode yang terstruktur, mudah dirawat, dan
+                            scalable.</span
+                        >
+                    </div>
+                    <div
+                        class="feature"
+                        data-aos="zoom-in"
+                        data-aos-delay="200"
+                    >
+                        <div class="ico" style="background: var(--secondary)">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <span
+                            ><strong>Solusi Cepat & Skalabel</strong> –
+                            Membangun sistem yang optimal dan siap
+                            berkembang.</span
+                        >
+                    </div>
+                    <div
+                        class="feature"
+                        data-aos="zoom-in"
+                        data-aos-delay="300"
+                    >
+                        <div class="ico" style="background: var(--accent)">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <span
+                            ><strong>Desain Berfokus Pengguna</strong> –
+                            Mengutamakan pengalaman pengguna yang sederhana dan
+                            nyaman.</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kanan: Gambar -->
+            <div
+                class="about-visual"
+                data-aos="fade-left"
+                data-aos-duration="800"
+                style="flex: 1 1 300px; min-height: 500px"
+            >
+                <img
+                    src="{{ $abouts->image ? asset('storage/' . $abouts->image) : 'https://images.unsplash.com/photo-1522444195799-478538b28823?q=80&w=1400&auto=format&fit=crop' }}"
+                    alt="{{ $abouts->title ?? 'About Image' }}"
+                    style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 20px;
+                        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                    "
+                />
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Skills -->
+<section id="skills" class="section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="badge">Keahlian</span>
+            <h2 class="section-title gradient-text">Bahasa & Framework</h2>
+            <p class="section-desc">
+                Bahasa pemrograman, framework, database, dan tools yang saya
+                gunakan dalam membangun aplikasi web modern.
+            </p>
+        </div>
+
         <div class="skills-grid" id="skillsGrid">
-          <article class="skill" data-aos="flip-left" style="--w: 90%">
-            <div class="head"><div class="icon"><i class="fas fa-code"></i></div><h3>Frontend</h3></div>
-            <div class="skill-item"><span>React.js</span><div class="bar"><i style="--w:90%"></i></div></div>
-            <div class="skill-item"><span>Vue.js</span><div class="bar"><i style="--w:80%"></i></div></div>
-            <div class="skill-item"><span>TypeScript</span><div class="bar"><i style="--w:85%"></i></div></div>
-          </article>
-          <article class="skill" data-aos="flip-right" style="--w: 90%">
-            <div class="head"><div class="icon" style="background: var(--secondary)"><i class="fas fa-server"></i></div><h3>Backend</h3></div>
-            <div class="skill-item"><span>Node.js</span><div class="bar"><i style="--w:90%"></i></div></div>
-            <div class="skill-item"><span>Python</span><div class="bar"><i style="--w:85%"></i></div></div>
-            <div class="skill-item"><span>Express.js</span><div class="bar"><i style="--w:80%"></i></div></div>
-          </article>
-          <article class="skill" data-aos="flip-left" style="--w: 85%">
-            <div class="head"><div class="icon" style="background: var(--accent)"><i class="fas fa-database"></i></div><h3>Database</h3></div>
-            <div class="skill-item"><span>MongoDB</span><div class="bar"><i style="--w:85%"></i></div></div>
-            <div class="skill-item"><span>PostgreSQL</span><div class="bar"><i style="--w:80%"></i></div></div>
-            <div class="skill-item"><span>MySQL</span><div class="bar"><i style="--w:75%"></i></div></div>
-          </article>
-          <article class="skill" data-aos="flip-right" style="--w: 80%">
-            <div class="head"><div class="icon" style="background: var(--success)"><i class="fas fa-tools"></i></div><h3>Tools</h3></div>
-            <div class="skill-item"><span>Docker</span><div class="bar"><i style="--w:80%"></i></div></div>
-            <div class="skill-item"><span>Git</span><div class="bar"><i style="--w:90%"></i></div></div>
-            <div class="skill-item"><span>AWS</span><div class="bar"><i style="--w:75%"></i></div></div>
-          </article>
-        </div>
-      </div>
-    </section>
+            @foreach($skills as $category => $skillGroup)
+                @php
+                    // Default values
+                    $iconColor = 'var(--primary)';
+                    $iconClass = 'fas fa-code';
 
-    <!-- Experience -->
-    <section id="experience" class="section">
-      <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <span class="badge">Experience</span>
-          <h2 class="section-title gradient-text">My Journey</h2>
-          <p class="section-desc">A timeline of my professional experience and education.</p>
+                    // Tentukan warna & icon kategori
+                    switch ($category) {
+                        case 'Bahasa Pemrograman':
+                            $iconColor = 'var(--primary)';
+                            $iconClass = 'fas fa-terminal';
+                            break;
+                        case 'Framework':
+                            $iconColor = 'var(--secondary)';
+                            $iconClass = 'fas fa-layer-group';
+                            break;
+                        case 'Database':
+                            $iconColor = 'var(--accent)';
+                            $iconClass = 'fas fa-database';
+                            break;
+                        case 'Tools':
+                            $iconColor = 'var(--success)';
+                            $iconClass = 'fas fa-tools';
+                            break;
+                    }
+                @endphp
+
+                <article class="skill" data-aos="flip-left" style="--w: 90%">
+                    <!-- Header kategori -->
+                    <div class="head">
+                        <div class="icon">
+                            <i class="{{ $iconClass }}" style="background: {{ $iconColor }}"></i>
+                        </div>
+                        <h3>{{ $category }}</h3>
+                    </div>
+
+                    <!-- Skill items -->
+                    @foreach($skillGroup as $skill)
+                        @php
+                            // Warna skill mengikuti kategori
+                            $skillColor = match($category) {
+                                'Framework' => 'var(--secondary)',
+                                'Database' => 'var(--accent)',
+                                'Tools' => 'var(--success)',
+                                'Bahasa Pemrograman' => 'var(--warning)',
+                                default => 'var(--primary)',
+                            };
+                        @endphp
+
+                   <div class="skill-item">
+    @if($skill->icon)
+        <span>
+            <i class="{{ $skill->icon }}" style="color: {{ $skillColor }}"></i>
+            {{ $skill->name }}
+        </span>
+    @else
+        <span>{{ $skill->name }}</span>
+    @endif
+
+    <div class="bar">
+        <i style="--w: {{ $skill->level }}%"></i>
+    </div>
+    <span class="percent">{{ $skill->level }}%</span>
+</div>
+
+                    @endforeach
+                </article>
+            @endforeach
         </div>
+    </div>
+</section>
+<!-- Experience -->
+<section id="experience" class="section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="badge">Pengalaman</span>
+            <h2 class="section-title gradient-text">Perjalanan Saya</h2>
+            <p class="section-desc">
+                Timeline pendidikan dan proyek yang saya kerjakan dengan
+                berbagai bahasa pemrograman & framework.
+            </p>
+        </div>
+
         <div class="timeline" id="timeline">
-          <div class="t-item" data-aos="fade-right">
-            <div class="dot" aria-hidden="true"></div>
-            <div class="bubble">
-              <div class="t-date">2020 - Present</div>
-              <div class="t-title">Senior Full Stack Developer</div>
-              <div class="t-company">TechCorp</div>
-              <p class="muted">Led a team of developers to build scalable web applications using React, Node.js, and AWS.</p>
+            @foreach($experiences as $index => $exp)
+            <div
+                class="t-item"
+                data-aos="{{ $index % 2 == 0 ? 'fade-right' : 'fade-left' }}"
+            >
+                <div class="dot" aria-hidden="true"></div>
+                <div class="bubble">
+                    <div class="t-date">{{ $exp->date }}</div>
+                    <div class="t-title">{{ $exp->title }}</div>
+                    <div class="t-company">{{ $exp->company }}</div>
+                    <p class="muted">{!! nl2br(e($exp->description)) !!}</p>
+                </div>
             </div>
-          </div>
-          <div class="t-item" data-aos="fade-left">
-            <div class="dot" aria-hidden="true"></div>
-            <div class="bubble">
-              <div class="t-date">2018 - 2020</div>
-              <div class="t-title">Full Stack Developer</div>
-              <div class="t-company">StartupX</div>
-              <p class="muted">Developed end-to-end solutions for e-commerce platforms using Vue.js and Python.</p>
-            </div>
-          </div>
-          <div class="t-item" data-aos="fade-right">
-            <div class="dot" aria-hidden="true"></div>
-            <div class="bubble">
-              <div class="t-date">2016 - 2018</div>
-              <div class="t-title">Bachelor of Computer Science</div>
-              <div class="t-company">University of Technology</div>
-              <p class="muted">Graduated with honors, specializing in web development and software engineering.</p>
-            </div>
-          </div>
+            @endforeach
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Projects -->
-    <section id="projects" class="section">
-      <div class="container">
+<!-- Projects -->
+<section id="projects" class="section">
+    <!-- Modal Lightbox -->
+    <div id="lightboxModal" class="lightbox-modal" style="display: none">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightboxImage" />
+        <div id="caption"></div>
+    </div>
+    <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <span class="badge">Projects</span>
-          <h2 class="section-title gradient-text">My Work</h2>
-          <p class="section-desc">A showcase of my recent projects, demonstrating my skills and creativity.</p>
+            <span class="badge">Projects</span>
+            <h2 class="section-title gradient-text">Portofolio</h2>
+            <p class="section-desc">
+                Beberapa proyek yang pernah saya kerjakan menggunakan PHP,
+                Laravel, CodeIgniter, Python, dan MySQL.
+            </p>
         </div>
+
         <div class="projects">
-          <article class="card" data-aos="zoom-in-up">
-            <div class="cover"></div>
-            <div class="overlay">
-              <a class="btn btn-primary" href="#"><i class="fas fa-eye"></i> View</a>
-              <a class="btn btn-secondary" href="#"><i class="fas fa-code"></i> Source</a>
-            </div>
-            <div class="body">
-              <span class="tag">Web Application</span>
-              <h3>E-Commerce Platform</h3>
-              <p class="muted">A fully responsive e-commerce platform built with React and Node.js.</p>
-              <div class="chips">
-                <span class="chip">React</span><span class="chip">Node.js</span><span class="chip">MongoDB</span>
-              </div>
-            </div>
-          </article>
-          <article class="card" data-aos="zoom-in-up" data-aos-delay="100">
-            <div class="cover"></div>
-            <div class="overlay">
-              <a class="btn btn-primary" href="#"><i class="fas fa-eye"></i> View</a>
-              <a class="btn btn-secondary" href="#"><i class="fas fa-code"></i> Source</a>
-            </div>
-            <div class="body">
-              <span class="tag">SaaS</span>
-              <h3>Task Management App</h3>
-              <p class="muted">A SaaS application for team collaboration, built with Vue.js and Firebase.</p>
-              <div class="chips">
-                <span class="chip">Vue.js</span><span class="chip">Firebase</span><span class="chip">TypeScript</span>
-              </div>
-            </div>
-          </article>
-          <article class="card" data-aos="zoom-in-up" data-aos-delay="200">
-            <div class="cover"></div>
-            <div class="overlay">
-              <a class="btn btn-primary" href="#"><i class="fas fa-eye"></i> View</a>
-              <a class="btn btn-secondary" href="#"><i class="fas fa-code"></i> Source</a>
-            </div>
-            <div class="body">
-              <span class="tag">API</span>
-              <h3>RESTful API</h3>
-              <p class="muted">A secure RESTful API for a mobile app, built with Express.js and PostgreSQL.</p>
-              <div class="chips">
-                <span class="chip">Express.js</span><span class="chip">PostgreSQL</span><span class="chip">Docker</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+            @forelse($projects as $project)
+            <article
+                class="card"
+                data-aos="zoom-in-up"
+                data-aos-delay="{{ $loop->index * 100 }}"
+            >
+                <div class="cover">
+                    @if($project->cover_image)
+                    <img
+                        src="{{ asset('storage/'.$project->cover_image) }}"
+                        alt="{{ $project->name }}"
+                    />
+                    @else
+                    <img
+                        src="assets/img/default.jpg"
+                        alt="{{ $project->name }}"
+                    />
+                    @endif
+                </div>
 
-    <!-- Contact -->
-    <section id="contact" class="section contact">
-      <div class="container">
+            <div class="overlay">
+    @if($project->demo_link)
+    <a class="btn btn-primary" href="{{ $project->demo_link }}" target="_blank">
+        <i class="fas fa-eye"></i> Demo
+    </a>
+    @endif 
+
+    @if($project->source_link)
+    <a class="btn btn-secondary" href="{{ $project->source_link }}" target="_blank">
+        <i class="fas fa-code"></i> Source
+    </a>
+    @endif
+
+    <a class="btn btn-info" href="{{ route('projects.show', $project->id) }}">
+        <i class="fas fa-info-circle"></i> Detail
+    </a>
+</div>
+
+
+                <div class="body">
+                    <span
+                        class="tag"
+                        >{{ $project->category ?? 'Web Application' }}</span
+                    >
+                    <h3>{{ $project->name }}</h3>
+                   <p class="muted">
+    {{ Str::limit($project->description ?? 'Deskripsi proyek belum ditambahkan.', 100, '...') }}
+</p>
+
+
+                    @if($project->technologies)
+                    <div class="chips">
+                        @foreach(explode(',', $project->technologies) as $tech)
+                        <span class="chip">{{ trim($tech) }}</span>
+                        @endforeach
+                    </div>
+                    @endif
+                </div>
+            </article>
+            @empty
+            <p class="text-muted">Belum ada proyek yang ditambahkan.</p>
+            @endforelse
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section contact">
+    <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <span class="badge">Contact</span>
-          <h2 class="section-title gradient-text">Get in Touch</h2>
-          <p class="section-desc">Feel free to reach out for collaborations or inquiries.</p>
+            <span class="badge">Contact</span>
+            <h2 class="section-title gradient-text">Kontak saya </h2>
+            <p class="section-desc">
+                Silakan Konsultasi untuk Website Impian anda dan buat bisnis
+                anda semakin maju
+            </p>
         </div>
+
         <div class="contact-grid">
-          <div data-aos="fade-right">
-            <div class="contact-item"><div class="contact-ico"><i class="fas fa-envelope"></i></div><span>mohsahrul@example.com</span></div>
-            <div class="contact-item"><div class="contact-ico" style="background: var(--secondary)"><i class="fas fa-phone"></i></div><span>+62 123 456 7890</span></div>
-            <div class="contact-item"><div class="contact-ico" style="background: var(--accent)"><i class="fas fa-map-marker-alt"></i></div><span>Jakarta, Indonesia</span></div>
-          </div>
-          <form class="form" id="contactForm" data-aos="fade-left" novalidate>
-            <h3>Send a Message</h3>
-            <div class="fg">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" required />
+            <!-- Info -->
+            <div data-aos="fade-right">
+                @foreach($contacts as $contact)
+                <div class="contact-item">
+                    <div class="contact-ico" @if($contact->
+                        color) style="background: {{ $contact->color }};"
+                        @endif>
+                        <i class="{{ $contact->icon }}"></i>
+                    </div>
+                    <span>{{ $contact->value }}</span>
+                </div>
+                @endforeach
             </div>
-            <div class="fg">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" required />
-            </div>
-            <div class="fg">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" required></textarea>
-            </div>
-            <button class="btn btn-primary" type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-          </form>
+            <!-- Form -->
+            <form
+                class="form card"
+                id="contactForm"
+                data-aos="fade-left"
+                onsubmit="sendToWhatsApp(event)"
+            >
+                <h3>Send a Message via WhatsApp</h3>
+
+                <div class="fg">
+                    <label for="name">Full Name</label>
+                    <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                        placeholder="Your full name"
+                    />
+                </div>
+
+                <div class="fg">
+                    <label for="email">Email Address</label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="your@email.com"
+                    />
+                </div>
+
+                <div class="fg">
+                    <label for="message">Your Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        required
+                        placeholder="Type your message..."
+                    ></textarea>
+                </div>
+
+                <button class="btn btn-whatsapp" type="submit">
+                    <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                </button>
+
+                <!-- feedback -->
+                <p id="formFeedback" class="feedback"></p>
+            </form>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    .fg input:focus,
+    .fg textarea:focus {
+        border-color: #25d366;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.2);
+    }
+    .btn-whatsapp {
+        background: #25d366;
+        color: white;
+        border: none;
+        padding: 0.9rem 1.5rem;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: 0.3s;
+    }
+    .btn-whatsapp:hover {
+        background: #1ebe5d;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+    }
+    .feedback {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    .feedback.error {
+        color: #e74c3c;
+    }
+    .feedback.success {
+        color: #2ecc71;
+    }
+</style>
+
+<script>
+    function sendToWhatsApp(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const feedback = document.getElementById("formFeedback");
+
+        if (!name || !email || !message) {
+            feedback.textContent = "⚠️ Please fill all fields before sending.";
+            feedback.className = "feedback error";
+            return;
+        }
+
+        const phone = "{{ $phoneNumber }}"; // Ambil dari database
+        const text = `Halo, saya ${name} (${email}).\n\n${message}`;
+        const encodedText = encodeURIComponent(text);
+        const url = `https://wa.me/${phone}?text=${encodedText}`;
+
+        feedback.textContent = "✅ Opening WhatsApp...";
+        feedback.className = "feedback success";
+
+        window.open(url, "_blank");
+    }
+</script>
 @endsection

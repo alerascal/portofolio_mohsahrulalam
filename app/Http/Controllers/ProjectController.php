@@ -4,81 +4,141 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
-    // Menampilkan daftar proyek
     public function index()
     {
-        $projects = Project::all(); // Ambil semua data proyek
-        return view('projects.index', compact('projects'));  // Kirim data proyek ke view 'projects.index'
+        $projects = Project::latest()->paginate(10);
+        return view('projects.index', compact('projects'));
     }
 
-    // Menampilkan form untuk membuat proyek baru
     public function create()
     {
-        return view('projects.create');  // Tampilkan form untuk membuat proyek baru
+        return view('projects.create');
     }
 
-    // Menyimpan proyek baru
     public function store(Request $request)
     {
-        // Validasi input dari pengguna
         $request->validate([
-            'name' => 'required|string|max:255',
-            'client' => 'required|string|max:255',
-            'status' => 'required|string|max:255',
-            'priority' => 'required|string|max:255',
-            'deadline' => 'required|date',
-            'progress' => 'required|integer|min:0|max:100',
+            'name'        => 'required|string|max:255',
+            'category'    => 'nullable|string|max:255',
+            'description' => 'nullable|string',
+            'client'      => 'nullable|string|max:255',
+            'status'      => 'required|in:active,completed,pending,on-hold',
+            'priority'    => 'required|in:low,medium,high',
+            'deadline'    => 'nullable|date',
+            'progress'    => 'required|integer|min:0|max:100',
+            'cover_image' => 'nullable|image|max:2048',
+            'demo_link'   => 'nullable|url',
+            'source_link' => 'nullable|url',
+            'technologies'=> 'nullable|string',
+            'images.*'    => 'nullable|image|max:2048',
         ]);
 
-        // Membuat dan menyimpan proyek baru
-        Project::create($request->all());
+        $data = $request->except('images');
 
-        return redirect()->route('projects.index')->with('success', 'Project created successfully');
+        if ($request->hasFile('cover_image')) {
+            $data['cover_image'] = $request->file('cover_image')->store('projects', 'public');
+        }
+
+        $project = Project::create($data);
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $img) {
+                $path = $img->store('project_images', 'public');
+                $project->images()->create(['image' => $path]);
+            }
+        }
+
+        return redirect()->route('projects.index')->with('success', 'Project created successfully.');
     }
 
-    // Menampilkan detail proyek
     public function show($id)
     {
-        $project = Project::findOrFail($id);  // Mencari proyek berdasarkan ID
-        return view('projects.show', compact('project'));  // Tampilkan detail proyek
+        $project = Project::findOrFail($id);
+        return view('projects.show', compact('project'));
     }
 
-    // Menampilkan form untuk mengedit proyek
     public function edit($id)
     {
-        $project = Project::findOrFail($id);  // Cari proyek berdasarkan ID
-        return view('projects.edit', compact('project'));  // Tampilkan form edit proyek
+        $project = Project::findOrFail($id);
+        return view('projects.edit', compact('project'));
     }
 
-    // Menyimpan perubahan proyek
     public function update(Request $request, $id)
     {
-        // Validasi input dari pengguna
         $request->validate([
-            'name' => 'required|string|max:255',
-            'client' => 'required|string|max:255',
-            'status' => 'required|string|max:255',
-            'priority' => 'required|string|max:255',
-            'deadline' => 'required|date',
-            'progress' => 'required|integer|min:0|max:100',
+            'name'        => 'required|string|max:255',
+            'category'    => 'nullable|string|max:255',
+            'description' => 'nullable|string',
+            'client'      => 'nullable|string|max:255',
+            'status'      => 'required|in:active,completed,pending,on-hold',
+            'priority'    => 'required|in:low,medium,high',
+            'deadline'    => 'nullable|date',
+            'progress'    => 'required|integer|min:0|max:100',
+            'cover_image' => 'nullable|image|max:2048',
+            'demo_link'   => 'nullable|url',
+            'source_link' => 'nullable|url',
+            'technologies'=> 'nullable|string',
+            'images.*'    => 'nullable|image|max:2048',
         ]);
 
-        // Mencari proyek berdasarkan ID dan mengupdate data
         $project = Project::findOrFail($id);
-        $project->update($request->all());
+        $data = $request->except('images');
 
-        return redirect()->route('projects.index')->with('success', 'Project updated successfully');
+        // Update cover
+        if ($request->hasFile('cover_image')) {
+            if ($project->cover_image && Storage::disk('public')->exists($project->cover_image)) {
+                Storage::disk('public')->delete($project->cover_image);
+            }
+            $data['cover_image'] = $request->file('cover_image')->store('projects', 'public');
+        }
+
+        $project->update($data);
+
+        // Tambah gallery baru (tidak hapus yang lama)
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $img) {
+                $path = $img->store('project_images', 'public');
+                $project->images()->create(['image' => $path]);
+            }
+        }
+
+        return redirect()->route('projects.index')->with('success', 'Project updated successfully.');
     }
 
-    // Menghapus proyek
     public function destroy($id)
     {
-        $project = Project::findOrFail($id);  // Cari proyek berdasarkan ID
-        $project->delete();  // Hapus proyek dari database
+        $project = Project::findOrFail($id);
 
-        return redirect()->route('projects.index')->with('success', 'Project deleted successfully');
+        if ($project->cover_image && Storage::disk('public')->exists($project->cover_image)) {
+            Storage::disk('public')->delete($project->cover_image);
+        }
+
+        foreach ($project->images as $img) {
+            if (Storage::disk('public')->exists($img->image)) {
+                Storage::disk('public')->delete($img->image);
+            }
+            $img->delete();
+        }
+
+        $project->delete();
+
+        return redirect()->route('projects.index')->with('success', 'Project deleted successfully.');
+    }
+
+    public function deleteImage(Project $project, $imageId)
+    {
+        $image = $project->images()->where('id', $imageId)->firstOrFail();
+
+        if (Storage::disk('public')->exists($image->image)) {
+            Storage::disk('public')->delete($image->image);
+        }
+
+        $image->delete();
+
+        return back()->with('success', 'Image deleted successfully.');
     }
 }

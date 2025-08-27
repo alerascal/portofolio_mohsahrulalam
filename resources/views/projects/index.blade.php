@@ -1,14 +1,6 @@
-@extends('layouts.backend')
-
-@section('title', 'Dashboard - Moh Sahrul Alamsyah')
-
+@extends('layouts.backend') @section('title', 'Dashboard - Moh Sahrul Alamsyah')
 @section('content')
 <main class="main-content">
-    <!-- Stats Cards -->
-    <div class="stats-grid">
-        <!-- Card for Active Projects, Tasks Completed, etc. (remains unchanged) -->
-    </div>
-
     <!-- Projects Table -->
     <div class="projects-section">
         <div class="section-header">
@@ -28,6 +20,7 @@
                         <th>Priority</th>
                         <th>Deadline</th>
                         <th>Progress</th>
+                        <th>Cover</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -41,12 +34,27 @@
                         <td>{{ $project->deadline }}</td>
                         <td>{{ $project->progress }}%</td>
                         <td>
-                            <a href="{{ route('projects.edit', $project->id) }}" class="btn btn-secondary">
+                            @if($project->cover_image)
+                            <img
+                                src="{{ asset('storage/'.$project->cover_image) }}"
+                                alt="Cover"
+                                width="80"
+                            />
+                            @else N/A @endif
+                        </td>
+                        <td>
+                            <a
+                                href="{{ route('projects.edit', $project->id) }}"
+                                class="btn btn-secondary"
+                            >
                                 <i class="fas fa-edit"></i> Edit
                             </a>
-                            <form action="{{ route('projects.destroy', $project->id) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
+                            <form
+                                action="{{ route('projects.destroy', $project->id) }}"
+                                method="POST"
+                                style="display: inline"
+                            >
+                                @csrf @method('DELETE')
                                 <button type="submit" class="btn btn-danger">
                                     <i class="fas fa-trash"></i> Delete
                                 </button>

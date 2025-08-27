@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="light">
+<html lang="id" data-theme="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,9 +37,11 @@
                  <main class="main-content">
                     @yield('content') <!-- Konten utama halaman dinamis -->
                 </main>
-                
                 @include('component.dashboard.script')
             </div>
         </div>
+        @stack('scripts')
     </body>
+    
+    
 </html>
