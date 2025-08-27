@@ -17,28 +17,30 @@ Project ini berfungsi sebagai website pribadi untuk menampilkan profil, pengalam
 
 ### Dashboard
 - Light Mode  
-  ![Dashboard Light](public/assets/screenshots/dashboard-light.png)
+  ![Dashboard Light](screenshots/dashboard-light.png)
 
 - Dark Mode  
-  ![Dashboard Dark](public/assets/screenshots/dashboard-dark.png)
+  ![Dashboard Dark](screenshots/dashboard-dark.png)
 
 ### Landing Page
 - Light Mode  
-  ![Landing Page Light](public/assets/screenshots/landing-light.png)
+  ![Landing Page Light](screenshots/landing-light.png)
 
 - Dark Mode  
-  ![Landing Page Dark](public/assets/screenshots/landing-dark.png)
+  ![Landing Page Dark](screenshots/landing-dark.png)
 
+---
 
 ## ⚡ Fitur
-- ✅ Landing page modern untuk portofolio
-- ✅ CRUD Project, Skill, Experience, Contact
-- ✅ Admin dashboard untuk kelola data
-- ✅ Responsif (mobile friendly)
+- ✅ Landing page modern untuk portofolio  
+- ✅ CRUD Project, Skill, Experience, Contact  
+- ✅ Admin dashboard untuk kelola data  
+- ✅ Responsif (mobile friendly)  
 
 ---
 
 ## 🛠️ Instalasi (Local)
+
 1. Clone repository:
    ```bash
    git clone https://github.com/alerascal/portofolio_mohsahrulalam.git
