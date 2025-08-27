@@ -14,13 +14,21 @@ Project ini berfungsi sebagai website pribadi untuk menampilkan profil, pengalam
 ---
 
 ## 📸 Screenshots
+
 ### Dashboard
-![Dashboard Screenshot](public/assets/screenshots/dashboard.png)
+- Light Mode  
+  ![Dashboard Light](public/assets/screenshots/dashboard-light.png)
+
+- Dark Mode  
+  ![Dashboard Dark](public/assets/screenshots/dashboard-dark.png)
 
 ### Landing Page
-![Landing Page Screenshot](public/assets/screenshots/landing.png)
+- Light Mode  
+  ![Landing Page Light](public/assets/screenshots/landing-light.png)
 
----
+- Dark Mode  
+  ![Landing Page Dark](public/assets/screenshots/landing-dark.png)
+
 
 ## ⚡ Fitur
 - ✅ Landing page modern untuk portofolio
