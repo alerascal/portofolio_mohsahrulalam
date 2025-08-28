@@ -4,7 +4,7 @@
 <section id="home" class="hero">
     <div class="container content" data-aos="fade-up" data-aos-duration="800">
         <span class="badge">{{ $hero->badge }}</span>
-       <h1 class="title gradient-text"><span id="typed-title"></span></h1>
+        <h1 class="title gradient-text"><span id="typed-title"></span></h1>
         <h2 class="subtitle">{{ $hero->subtitle }}</h2>
         <p class="desc"><span id="typed-desc"></span></p>
         <div class="actions">
@@ -148,9 +148,10 @@
         </div>
     </div>
 </section>
-<!-- Skills -->
+<!-- Skills Section -->
 <section id="skills" class="section">
     <div class="container">
+        <!-- Section Header -->
         <div class="section-header" data-aos="fade-up">
             <span class="badge">Keahlian</span>
             <h2 class="section-title gradient-text">Bahasa & Framework</h2>
@@ -160,15 +161,16 @@
             </p>
         </div>
 
+        <!-- Skills Grid -->
         <div class="skills-grid" id="skillsGrid">
             @foreach($skills as $category => $skillGroup)
                 @php
-                    // Default values
+                    // Default icon & warna kategori
                     $iconColor = 'var(--primary)';
                     $iconClass = 'fas fa-code';
 
-                    // Tentukan warna & icon kategori
-                    switch ($category) {
+                    // Tentukan icon & warna berdasarkan kategori
+                    switch($category) {
                         case 'Bahasa Pemrograman':
                             $iconColor = 'var(--primary)';
                             $iconClass = 'fas fa-terminal';
@@ -210,28 +212,29 @@
                             };
                         @endphp
 
-                   <div class="skill-item">
-    @if($skill->icon)
-        <span>
-            <i class="{{ $skill->icon }}" style="color: {{ $skillColor }}"></i>
-            {{ $skill->name }}
-        </span>
-    @else
-        <span>{{ $skill->name }}</span>
-    @endif
+                        <div class="skill-item">
+                            @if($skill->icon)
+                                <span>
+                                    <i class="{{ $skill->icon }}" style="color: {{ $skillColor }}"></i>
+                                    {{ $skill->name }}
+                                </span>
+                            @else
+                                <span>{{ $skill->name }}</span>
+                            @endif
 
-    <div class="bar">
-        <i style="--w: {{ $skill->level }}%"></i>
-    </div>
-    <span class="percent">{{ $skill->level }}%</span>
-</div>
-
+                            <!-- Progress bar -->
+                            <div class="bar">
+                                <i style="--w: {{ $skill->level }}%; background-color: {{ $skillColor }}"></i>
+                            </div>
+                            <span class="percent">{{ $skill->level }}%</span>
+                        </div>
                     @endforeach
                 </article>
             @endforeach
         </div>
     </div>
 </section>
+
 <!-- Experience -->
 <section id="experience" class="section">
     <div class="container">
@@ -302,24 +305,30 @@
                     @endif
                 </div>
 
-            <div class="overlay">
-    @if($project->demo_link)
-    <a class="btn btn-primary" href="{{ $project->demo_link }}" target="_blank">
-        <i class="fas fa-eye"></i> Demo
-    </a>
-    @endif 
+                <div class="overlay">
+                    @if($project->demo_link)
+                    <a
+                        class="btn btn-primary"
+                        href="{{ $project->demo_link }}"
+                        target="_blank"
+                    >
+                        <i class="fas fa-eye"></i> Demo
+                    </a>
+                    @endif @if($project->source_link)
+                    <a
+                        class="btn btn-secondary"
+                        href="{{ $project->source_link }}"
+                        target="_blank"
+                    >
+                        <i class="fas fa-code"></i> Source
+                    </a>
+                    @endif
 
-    @if($project->source_link)
-    <a class="btn btn-secondary" href="{{ $project->source_link }}" target="_blank">
-        <i class="fas fa-code"></i> Source
-    </a>
-    @endif
+                  <a class="btn" style="background-color: #0d6efd; color: white;" href="{{ route('projects.show', $project->id) }}">
+    <i class="fas fa-info-circle"></i> Detail
+</a>
 
-    <a class="btn btn-info" href="{{ route('projects.show', $project->id) }}">
-        <i class="fas fa-info-circle"></i> Detail
-    </a>
-</div>
-
+                </div>
 
                 <div class="body">
                     <span
@@ -327,10 +336,9 @@
                         >{{ $project->category ?? 'Web Application' }}</span
                     >
                     <h3>{{ $project->name }}</h3>
-                   <p class="muted">
-    {{ Str::limit($project->description ?? 'Deskripsi proyek belum ditambahkan.', 100, '...') }}
-</p>
-
+                    <p class="muted">
+                        {{ Str::limit($project->description ?? 'Deskripsi proyek belum ditambahkan.', 100, '...') }}
+                    </p>
 
                     @if($project->technologies)
                     <div class="chips">
@@ -353,7 +361,7 @@
     <div class="container">
         <div class="section-header" data-aos="fade-up">
             <span class="badge">Contact</span>
-            <h2 class="section-title gradient-text">Kontak saya </h2>
+            <h2 class="section-title gradient-text">Kontak saya</h2>
             <p class="section-desc">
                 Silakan Konsultasi untuk Website Impian anda dan buat bisnis
                 anda semakin maju
