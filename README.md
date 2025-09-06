@@ -154,9 +154,3 @@ http://localhost:8000
 
 MIT License © 2025 Moh Sahrul Alam
 
-**✨ Tips:**
-
-* Tambahkan badge tambahan seperti `issues`, `license`, `last commit` agar lebih interaktif.
-* Tambahkan link live demo kalau portofolio sudah di-hosting.
-* Ganti placeholder `preview.gif` dengan GIF nyata dari aplikasi agar menarik perhatian.
-
