@@ -1,4 +1,5 @@
-@extends('layouts.backend') @section('title', 'Dashboard - Moh Sahrul Alamsyah')
+@extends('layouts.backend') 
+@section('title', 'Dashboard - Moh Sahrul Alamsyah')
 @section('content')
 <main class="main-content">
     <!-- Projects Table -->

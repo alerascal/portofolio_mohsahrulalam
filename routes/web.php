@@ -21,9 +21,12 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+Route::get('/cv', function () {
+    return view('cv');
+})->name('cv');
 
 // Welcome page
-Route::get('/', [FrontendController::class, 'welcome'])->name('welcome');
+Route::get('/', [FrontendController::class, 'home'])->name('home');
 Route::get('lang/{locale}', function ($locale) {
     if (in_array($locale, ['en', 'id', 'ar', 'ja', 'ko'])) {
         session(['locale' => $locale]);

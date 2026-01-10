@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
-    public function welcome()
+    public function home()
     {
         $hero = HeroSection::first();
         $abouts = About::first();
@@ -31,7 +31,7 @@ class FrontendController extends Controller
         // ✅ Ambil semua social links
         $socialLinks = SocialLink::all();
 
-        return view('welcome', compact(
+        return view('home', compact(
             'hero', 
             'abouts', 
             'skills', 
