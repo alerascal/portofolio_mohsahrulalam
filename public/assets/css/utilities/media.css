@@ -1,0 +1,159 @@
+/* Media Queries & Responsive Utilities */
+
+/* Small Mobile Devices */
+@media (max-width: 374px) {
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .typing-text {
+        font-size: 14px;
+    }
+
+    .btn {
+        min-width: 120px;
+        padding: 10px 20px;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .image-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Large Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero-content {
+        gap: 50px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .qualities-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Desktop Optimizations */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1600px;
+    }
+
+    .nav-content {
+        max-width: 1600px;
+    }
+
+    .footer-content {
+        max-width: 1600px;
+    }
+}
+
+/* Landscape Mobile Optimization */
+@media (max-width: 896px) and (orientation: landscape) {
+    .hero {
+        padding: 100px 0 40px;
+    }
+
+    .image-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+
+    .floating-icons {
+        display: none;
+    }
+}
+
+/* Ultra-wide Screens */
+@media (min-width: 1920px) {
+    body {
+        font-size: 18px;
+    }
+
+    .hero-text h1 {
+        font-size: 80px;
+    }
+
+    .section-title {
+        font-size: 56px;
+    }
+}
+
+/* Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .skill-card:hover,
+    .project-card:hover,
+    .quality-item:hover,
+    .education-card:hover {
+        transform: none;
+    }
+
+    .btn:hover {
+        transform: none;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --primary: #00ff00;
+        --secondary: #00ccff;
+        --accent: #ff0099;
+    }
+
+    .btn,
+    .skill-card,
+    .project-card,
+    .quality-item {
+        border-width: 2px;
+    }
+}
+
+/* Dark Mode Support (already dark, but for consistency) */
+@media (prefers-color-scheme: light) {
+    body {
+        background: var(--darker);
+        color: var(--light);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .animated-bg,
+    nav,
+    .hero-buttons,
+    .floating-icons,
+    .glow-ring,
+    footer {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+}

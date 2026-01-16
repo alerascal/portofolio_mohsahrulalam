@@ -1,0 +1,44 @@
+/* Contact Info - Responsive Grid */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: clamp(12px, 3vw, 20px);
+    margin-top: clamp(30px, 6vh, 40px);
+    animation: fadeInUp 1s ease 1s both;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: clamp(12px, 2.5vw, 15px) clamp(16px, 3vw, 20px);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary);
+    transform: translateX(5px);
+}
+
+.contact-item i {
+    color: var(--primary);
+    font-size: clamp(16px, 3vw, 18px);
+    flex-shrink: 0;
+}
+
+.contact-item span {
+    font-size: clamp(12px, 2vw, 14px);
+    color: rgba(255, 255, 255, 0.8);
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+}

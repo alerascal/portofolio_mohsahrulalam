@@ -1,0 +1,40 @@
+/* Skills Grid - Fully Responsive */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 280px), 1fr)
+    );
+    gap: clamp(20px, 4vw, 30px);
+}
+
+/* Projects Grid - Optimized */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 300px), 1fr)
+    );
+    gap: clamp(20px, 4vw, 35px);
+}
+
+/* Education Grid */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 300px), 1fr)
+    );
+    gap: clamp(24px, 5vw, 36px);
+    margin-top: 60px;
+}
+
+/* Qualities Grid - Mobile Optimized */
+.qualities-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 140px), 1fr)
+    );
+    gap: clamp(15px, 3vw, 20px);
+}

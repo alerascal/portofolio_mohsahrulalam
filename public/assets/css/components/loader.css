@@ -1,0 +1,390 @@
+/* ==========================================
+   PREMIUM LOADING SCREEN
+   Aesthetic, Smooth, Modern Loading Experience
+   ========================================== */
+
+/* Loading Overlay */
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--darker);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Loading Container */
+.loading-container {
+    text-align: center;
+    position: relative;
+}
+
+/* Animated Background Gradient */
+.loading-screen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 255, 136, 0.03) 0%,
+        transparent 70%
+    );
+    animation: pulseGradient 3s ease-in-out infinite;
+}
+
+@keyframes pulseGradient {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+/* Loader Wrapper */
+.loader-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 40px;
+}
+
+/* Outer Ring */
+.loader-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: var(--primary);
+    border-right-color: var(--secondary);
+    animation: spin 2s linear infinite;
+}
+
+.loader-ring:nth-child(2) {
+    inset: 20px;
+    border-top-color: var(--secondary);
+    border-right-color: var(--accent);
+    animation: spin 3s linear infinite reverse;
+}
+
+.loader-ring:nth-child(3) {
+    inset: 40px;
+    border-top-color: var(--accent);
+    border-right-color: var(--primary);
+    animation: spin 4s linear infinite;
+}
+
+/* Center Circle */
+.loader-center {
+    position: absolute;
+    inset: 60px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 255, 136, 0.2),
+        rgba(0, 153, 255, 0.2),
+        rgba(255, 0, 136, 0.2)
+    );
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 60px rgba(0, 255, 136, 0.3),
+                inset 0 0 30px rgba(0, 255, 136, 0.1);
+}
+
+/* Logo or Icon in Center */
+.loader-icon {
+    font-size: 48px;
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary),
+        var(--accent)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Loading Text */
+.loading-text {
+    font-size: 24px;
+    font-weight: 600;
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary),
+        var(--accent),
+        var(--primary)
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+/* Subtitle */
+.loading-subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: fadeInOut 2s ease-in-out infinite;
+}
+
+/* Progress Bar */
+.loading-progress {
+    width: 300px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    margin: 30px auto 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.loading-progress-bar {
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary),
+        var(--accent)
+    );
+    border-radius: 10px;
+    animation: progress 2s ease-in-out infinite;
+    box-shadow: 0 0 20px var(--primary);
+}
+
+/* Floating Particles */
+.loader-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: float 3s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+.particle:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+    background: var(--primary);
+}
+
+.particle:nth-child(2) {
+    top: 20%;
+    right: 15%;
+    animation-delay: 0.5s;
+    background: var(--secondary);
+}
+
+.particle:nth-child(3) {
+    bottom: 15%;
+    left: 15%;
+    animation-delay: 1s;
+    background: var(--accent);
+}
+
+.particle:nth-child(4) {
+    bottom: 25%;
+    right: 20%;
+    animation-delay: 1.5s;
+    background: var(--primary);
+}
+
+.particle:nth-child(5) {
+    top: 50%;
+    left: 10%;
+    animation-delay: 2s;
+    background: var(--secondary);
+}
+
+.particle:nth-child(6) {
+    top: 60%;
+    right: 10%;
+    animation-delay: 2.5s;
+    background: var(--accent);
+}
+
+/* Percentage Counter */
+.loading-percentage {
+    font-size: 14px;
+    color: var(--primary);
+    margin-top: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes progress {
+    0% {
+        width: 0%;
+        transform: translateX(0);
+    }
+    50% {
+        width: 70%;
+    }
+    100% {
+        width: 100%;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-30px) scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 768px) {
+    .loader-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .loader-center {
+        inset: 45px;
+    }
+    
+    .loader-icon {
+        font-size: 32px;
+    }
+    
+    .loading-text {
+        font-size: 20px;
+    }
+    
+    .loading-progress {
+        width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .loader-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .loader-center {
+        inset: 35px;
+    }
+    
+    .loader-icon {
+        font-size: 24px;
+    }
+    
+    .loading-text {
+        font-size: 18px;
+    }
+    
+    .loading-subtitle {
+        font-size: 12px;
+    }
+    
+    .loading-progress {
+        width: 200px;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .loader-ring,
+    .loader-center,
+    .loader-icon,
+    .loading-text,
+    .loading-progress-bar,
+    .particle {
+        animation: none !important;
+    }
+    
+    .loader-ring {
+        opacity: 0.5;
+    }
+}

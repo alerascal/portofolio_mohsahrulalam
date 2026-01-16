@@ -1,156 +1,151 @@
-Oke! Saya buatkan versi **README.md profesional siap pakai** untuk repositori kamu, lengkap dengan **badge, link demo, animasi GIF, dan format menarik** agar terlihat rapi di GitHub. Kamu bisa langsung copy-paste ke `README.md`.
+# 🌐 Portfolio — Moh. Sahrul Alamsyah
+
+Portfolio website pribadi yang menampilkan profil profesional, CV, skill, sertifikasi, pengalaman organisasi, dan kontak.
+Dibangun dengan tampilan modern, responsif, dan clean untuk kebutuhan **personal branding** dan **rekrutmen**.
 
 ---
 
-````markdown
-# 🌐 Portofolio - Moh Sahrul Alam
+## 👨‍💻 Tentang Saya
 
-![GitHub repo size](https://img.shields.io/github/repo-size/alerascal/portofolio_mohsahrulalam) 
-![GitHub stars](https://img.shields.io/github/stars/alerascal/portofolio_mohsahrulalam?style=social) 
-![GitHub forks](https://img.shields.io/github/forks/alerascal/portofolio_mohsahrulalam?style=social)
+**Moh. Sahrul Alamsyah**
+Junior Fullstack Web Application Developer
 
-Selamat datang di portofolio digital saya!  
-Ini adalah project **Portofolio Personal** yang dibangun menggunakan **Laravel 12** dan **TailwindCSS**, menampilkan profil, pengalaman, skill, dan project-project yang pernah saya kerjakan.
+Lulusan **D3 Sistem Informasi – Universitas Bina Sarana Informatika (UBSI) Tegal** dengan minat utama pada:
 
-🎬 **Demo Live:** [Klik di sini untuk melihat demo](#) *(tambahkan link live hosting jika ada)*
+* Pengembangan aplikasi web
+* Backend & frontend development
+* IT Support & sistem informasi
 
----
+Portfolio ini dibuat sebagai representasi profesional untuk keperluan:
 
-## 🚀 Tech Stack
-- [Laravel 12](https://laravel.com/) - PHP Framework  
-- [MySQL](https://www.mysql.com/) - Database  
-- [TailwindCSS](https://tailwindcss.com/) - Styling  
-- [Vite](https://vitejs.dev/) - Build Tool  
-- [Node.js & npm](https://nodejs.org/) - JavaScript Runtime & Package Manager  
+* Lamaran kerja
+* Profil GitHub
+* LinkedIn & personal branding
 
 ---
 
-## 📸 Screenshots / GIF
+## ✨ Fitur Utama
 
-### Dashboard
-- Light Mode  
-  ![Dashboard Light](screenshots/dashboard-light.png)
-
-- Dark Mode  
-  ![Dashboard Dark](screenshots/dashboard-dark.png)
-
-### Landing Page
-- Light Mode  
-  ![Landing Page Light](screenshots/landing-light.png)
-
-- Dark Mode  
-  ![Landing Page Dark](screenshots/landing-dark.png)
-
-### GIF Preview
-![Preview GIF](screenshots/preview.gif)
+* 🎨 UI modern (Glassmorphism & clean design)
+* 📱 Responsive (desktop & mobile)
+* 📄 CV online (Blade Template)
+* 🧠 Skills (Hard & Soft Skills)
+* 🏆 Sertifikat & pencapaian
+* 🏢 Pengalaman organisasi & volunteer
+* 🔗 Integrasi kontak (WhatsApp, GitHub, LinkedIn)
 
 ---
 
-## ⚡ Fitur
-- ✅ Landing page modern & profesional  
-- ✅ CRUD Project, Skill, Experience, Contact  
-- ✅ Admin dashboard untuk kelola data portofolio  
-- ✅ Responsif (mobile friendly)  
-- ✅ Mode Light & Dark  
-- ✅ Build dengan Vite untuk performa cepat  
+## 🛠️ Tech Stack
+
+### Frontend
+
+* HTML5
+* CSS3 (Modern CSS, Grid, Flexbox)
+* JavaScript (ES6+)
+* Font Awesome Icons
+
+### Backend
+
+* PHP 8+
+* Laravel (Blade Template Engine)
+
+### Tools
+
+* Git & GitHub
+* Visual Studio Code
 
 ---
 
-## 🛠️ Instalasi (Local)
+## 📂 Struktur Project
 
-1. **Clone repository**
+```
+├── public/
+│   └── assets/
+│       └── images/
+│           └── foto-sahrul.jpg
+│
+├── resources/
+│   └── views/
+│       ├── home.blade.php
+│       └── cv.blade.php
+│
+├── README.md
+└── composer.json
+```
+
+---
+
+## 🚀 Cara Menjalankan Project (Local)
+
+1. Clone repository
+
 ```bash
 git clone https://github.com/alerascal/portofolio_mohsahrulalam.git
-cd portofolio_mohsahrulalam
-````
+```
 
-2. **Install dependensi PHP**
+2. Masuk ke folder project
+
+```bash
+cd portofolio_mohsahrulalam
+```
+
+3. Install dependency Laravel
 
 ```bash
 composer install
 ```
 
-3. **Install dependensi JavaScript**
-
-```bash
-npm install
-```
-
-4. **Copy file environment**
+4. Copy file environment
 
 ```bash
 cp .env.example .env
 ```
 
-5. **Generate application key**
+5. Generate app key
 
 ```bash
 php artisan key:generate
 ```
 
-6. **Sesuaikan konfigurasi database di `.env`**
-
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=portofolio_db
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
-7. **Jalankan migrasi database**
+6. Jalankan server
 
 ```bash
-php artisan migrate
-```
-
-8. **(Opsional) Seed data awal**
-
-```bash
-php artisan db:seed
-```
-
-9. **Build asset & jalankan server development**
-
-```bash
-npm run dev
 php artisan serve
 ```
 
-10. **Akses aplikasi**
+Akses di browser:
 
 ```
-http://localhost:8000
+http://127.0.0.1:8000
 ```
 
 ---
 
-## 📖 Cara Penggunaan
+## 📸 Preview
 
-* Login sebagai admin untuk mengelola project, skill, experience, dan contact.
-* Gunakan dashboard untuk melihat statistik project dan update portofolio.
-* Landing page bisa langsung dibagikan sebagai website portofolio personal.
+> Tampilan website portfolio modern dengan animasi halus dan layout profesional.
 
----
-
-## 🤝 Kontribusi
-
-1. Fork repository ini
-2. Buat branch fitur baru (`git checkout -b fitur-baru`)
-3. Commit perubahan (`git commit -m "Tambah fitur baru"`)
-4. Push ke branch (`git push origin fitur-baru`)
-5. Buat Pull Request
+*(Screenshot dapat ditambahkan di sini)*
 
 ---
 
-## 📞 Kontak
+## 📬 Kontak
 
-* Email: [mohsahrulalam@example.com](mailto:syahsahrulalam58@gmail.com)
-* no wa : 082220668915
-* Twitter: [@mohsahrulalam](https://twitter.com/mohsahrulalam)
+* 📱 WhatsApp: [https://wa.me/6282220668915](https://wa.me/6282220668915)
+* 💻 GitHub: [https://github.com/alerascal](https://github.com/alerascal)
+* 🔗 LinkedIn: [https://linkedin.com](https://linkedin.com)
 
-## 📝 Lisensi
+---
 
-MIT License © 2025 Moh Sahrul Alam
+## 📄 Lisensi
 
+Project ini bersifat **personal portfolio**.
+Boleh digunakan sebagai referensi, namun tidak untuk dikomersialkan tanpa izin.
+
+---
+
+⭐ Jika repo ini bermanfaat atau menginspirasi, jangan lupa beri **star** di GitHub!
+
+—
+**Moh. Sahrul Alamsyah**
