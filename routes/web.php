@@ -12,6 +12,7 @@ use App\Http\Controllers\SkillController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SocialLinkController;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 
 
@@ -22,8 +23,13 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/cv', function () {
-    return view('cv');
+    $pdf = Pdf::loadView('cv');
+    return $pdf->stream('CV-Moh-Sahrul-Alamsyah.pdf');
 })->name('cv');
+Route::get('/cv-modern', function () {
+    $pdf = Pdf::loadView('cv-modern');
+    return $pdf->stream('CV-Moh-Sahrul-Alamsyah.pdf');
+});
 
 // Welcome page
 Route::get('/', [FrontendController::class, 'home'])->name('home');

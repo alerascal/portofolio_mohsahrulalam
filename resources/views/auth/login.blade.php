@@ -480,150 +480,112 @@
             }
         </style>
     </head>
-    <body>
-        <!-- Floating particles -->
-        <div class="particle" style="top: 20%; left: 10%"></div>
-        <div class="particle" style="top: 60%; left: 85%"></div>
-        <div class="particle" style="top: 80%; left: 20%"></div>
+   <body>
+    <!-- Floating particles -->
+    <div class="particle" style="top: 20%; left: 10%"></div>
+    <div class="particle" style="top: 60%; left: 85%"></div>
+    <div class="particle" style="top: 80%; left: 20%"></div>
 
-        <div class="login-container">
-            <button
-                class="theme-toggle"
-                id="themeToggle"
-                aria-label="Toggle theme"
-            >
-                <i class="fas fa-moon"></i>
-            </button>
+    <div class="login-container">
+        <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle theme"
+        >
+            <i class="fas fa-moon"></i>
+        </button>
 
-            <div class="login-header">
-                <h1 class="login-title">Selamat Datang</h1>
-                <p class="login-subtitle">
-                    silakan login terlebih dahulu untuk mengelola portofolio
-                    anda
-                </p>
-            </div>
-
-            <div class="error-message" id="errorMessage" style="display: none">
-             tidak semudah itu wkwkwk
-            </div>
-
-     <form class="login-form" id="loginForm" action="{{ route('login') }}" method="POST">
-    @csrf
-    <div class="form-group">
-        <input
-            type="email"
-            name="email"
-            class="form-input"
-            placeholder="Enter your email"
-            required
-        />
-        <i class="fas fa-envelope form-icon" aria-hidden="true"></i>
-    </div>
-
-    <div class="form-group">
-        <input
-            type="password"
-            name="password"
-            class="form-input"
-            placeholder="Enter your password"
-            required
-        />
-        <i class="fas fa-lock form-icon" aria-hidden="true"></i>
-    </div>
-
-    <button type="submit" class="btn">
-        <span>Sign In</span>
-    </button>
-</form>
+        <div class="login-header">
+            <h1 class="login-title">Selamat Datang</h1>
+            <p class="login-subtitle">
+                silakan login terlebih dahulu untuk mengelola portofolio anda
+            </p>
         </div>
 
-        <script>
-            // Theme Toggle Functionality
-            const themeToggle = document.getElementById("themeToggle");
-            const html = document.documentElement;
+        {{-- Error dari Laravel --}}
+        @if ($errors->any())
+            <div class="error-message" id="errorMessage">
+                {{ $errors->first() }}
+            </div>
+        @else
+            <div class="error-message" id="errorMessage" style="display: none"></div>
+        @endif
 
-            // Check for saved theme preference
-            const savedTheme = localStorage.getItem("theme") || "light";
-            html.setAttribute("data-theme", savedTheme);
-            updateThemeIcon(savedTheme);
+        <!-- FORM LOGIN -->
+        <form
+            class="login-form"
+            id="loginForm"
+            action="{{ route('login.post') }}"
+            method="POST"
+        >
+            @csrf
 
-            themeToggle.addEventListener("click", () => {
-                const currentTheme = html.getAttribute("data-theme");
-                const newTheme = currentTheme === "dark" ? "light" : "dark";
+            <div class="form-group">
+                <input
+                    type="email"
+                    name="email"
+                    class="form-input"
+                    placeholder="Enter your email"
+                    required
+                />
+                <i class="fas fa-envelope form-icon"></i>
+            </div>
 
-                html.setAttribute("data-theme", newTheme);
-                localStorage.setItem("theme", newTheme);
-                updateThemeIcon(newTheme);
+            <div class="form-group">
+                <input
+                    type="password"
+                    name="password"
+                    class="form-input"
+                    placeholder="Enter your password"
+                    required
+                />
+                <i class="fas fa-lock form-icon"></i>
+            </div>
 
-                // Add rotation animation
-                themeToggle.style.transform = "rotate(360deg)";
-                setTimeout(() => {
-                    themeToggle.style.transform = "";
-                }, 400);
-            });
+            <button type="submit" class="btn">
+                <span>Sign In</span>
+            </button>
+        </form>
+    </div>
 
-            function updateThemeIcon(theme) {
-                const icon = themeToggle.querySelector("i");
-                icon.className =
-                    theme === "dark" ? "fas fa-sun" : "fas fa-moon";
-            }
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById("themeToggle");
+        const html = document.documentElement;
 
-            // Form Animation & Validation
-            const loginForm = document.getElementById("loginForm");
-            const errorMessage = document.getElementById("errorMessage");
+        const savedTheme = localStorage.getItem("theme") || "light";
+        html.setAttribute("data-theme", savedTheme);
+        updateThemeIcon(savedTheme);
 
-         
-            
-            function showError(message) {
-                errorMessage.textContent = message;
-                errorMessage.style.display = "block";
-                errorMessage.style.animation = "none";
-                errorMessage.offsetHeight; // Trigger reflow
-                errorMessage.style.animation = "shake 0.5s ease-in-out";
-            }
+        themeToggle.addEventListener("click", () => {
+            const newTheme =
+                html.getAttribute("data-theme") === "dark" ? "light" : "dark";
 
-            function showSuccess() {
-                const button = loginForm.querySelector(".btn");
-                const originalText = button.innerHTML;
+            html.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+            updateThemeIcon(newTheme);
+        });
 
-                button.innerHTML = '<i class="fas fa-check"></i> Success!';
-                button.style.background =
-                    "linear-gradient(135deg, #48bb78 0%, #38a169 100%)";
+        function updateThemeIcon(theme) {
+            themeToggle.querySelector("i").className =
+                theme === "dark" ? "fas fa-sun" : "fas fa-moon";
+        }
 
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                    button.style.background = "";
-                }, 2000);
-            }
+        // Particle Animation
+        function createParticle() {
+            const particle = document.createElement("div");
+            particle.className = "particle";
+            particle.style.left = Math.random() * 100 + "%";
+            particle.style.top = Math.random() * 100 + "%";
+            particle.style.animationDuration =
+                Math.random() * 3 + 4 + "s";
+            document.body.appendChild(particle);
 
-            // Input Focus Effects
-            const inputs = document.querySelectorAll(".form-input");
-            inputs.forEach((input) => {
-                input.addEventListener("focus", () => {
-                    input.parentElement.style.transform = "translateY(-2px)";
-                });
+            setTimeout(() => particle.remove(), 6000);
+        }
 
-                input.addEventListener("blur", () => {
-                    input.parentElement.style.transform = "";
-                });
-            });
+        setInterval(createParticle, 3000);
+    </script>
+</body>
 
-            // Particle Animation
-            function createParticle() {
-                const particle = document.createElement("div");
-                particle.className = "particle";
-                particle.style.left = Math.random() * 100 + "%";
-                particle.style.top = Math.random() * 100 + "%";
-                particle.style.animationDuration = Math.random() * 3 + 4 + "s";
-                document.body.appendChild(particle);
-
-                setTimeout(() => {
-                    particle.remove();
-                }, 6000);
-            }
-
-            // Create particles periodically
-            setInterval(createParticle, 3000);
-        </script>
-    </body>
 </html>

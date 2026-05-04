@@ -193,12 +193,7 @@
             <table class="header-table">
                 <tr>
                     <td class="photo-cell">
-                        <img
-                            src="{{
-                                asset('assets/images/foto-sahrul.jpg')
-                            }}"
-                            alt="Foto"
-                        />
+                       <img src="{{ public_path('assets/images/foto-sahrul.jpg') }}" alt="Foto">
                     </td>
                     <td class="info-cell">
                         <table width="100%" cellpadding="0" cellspacing="0">
@@ -219,6 +214,19 @@
                             </tr>
                         </table>
                     </td>
+<td style="width:120px; text-align:center;">
+    <div style="font-size:9pt;">Portofolio saya </div>
+
+    @php
+        $qr = base64_encode(
+            file_get_contents(
+                'https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=http://moh_sahrulalam.test/'
+            )
+        );
+    @endphp
+
+    <img src="data:image/png;base64,{{ $qr }}" width="100">
+</td>
                 </tr>
             </table>
         </div>
@@ -348,7 +356,7 @@
             <div class="entry">
                 <div class="entry-header">
                     <div class="entry-title">Host Livestreaming</div>
-                    <div class="entry-date">November 2024 - Desember 2024</div>
+                    <div class="entry-date">November 2024 - Desember 2025</div>
                 </div>
                 <div class="entry-company">Shopee Affiliate</div>
                 <ul>
