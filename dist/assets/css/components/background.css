@@ -1,0 +1,73 @@
+/* Animated Background - Optimized for Mobile */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: radial-gradient(
+        ellipse at top,
+        #0a1628 0%,
+        #050814 100%
+    );
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite;
+}
+
+.floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.12;
+    animation: float-shape 25s infinite ease-in-out;
+    will-change: transform;
+}
+
+.shape1 {
+    width: clamp(300px, 50vw, 600px);
+    height: clamp(300px, 50vw, 600px);
+    background: var(--primary);
+    top: -20%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.shape2 {
+    width: clamp(250px, 40vw, 500px);
+    height: clamp(250px, 40vw, 500px);
+    background: var(--secondary);
+    bottom: -15%;
+    right: -8%;
+    animation-delay: -7s;
+}
+
+.shape3 {
+    width: clamp(200px, 35vw, 400px);
+    height: clamp(200px, 35vw, 400px);
+    background: var(--accent);
+    top: 50%;
+    right: 5%;
+    animation-delay: -14s;
+}

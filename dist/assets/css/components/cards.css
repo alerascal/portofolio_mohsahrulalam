@@ -1,0 +1,342 @@
+/* Skills Grid - Fully Responsive */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: clamp(20px, 4vw, 30px);
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: clamp(20px, 4vw, 25px);
+    padding: clamp(25px, 5vw, 40px);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary);
+    box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
+}
+
+.skill-card:hover::before {
+    transform: scaleX(1);
+}
+
+.skill-icon {
+    width: clamp(60px, 12vw, 70px);
+    height: clamp(60px, 12vw, 70px);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: clamp(15px, 3vw, 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: clamp(20px, 4vh, 25px);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.skill-card h3 {
+    font-size: clamp(18px, 4vw, 24px);
+    margin-bottom: clamp(15px, 3vh, 20px);
+    color: var(--light);
+}
+
+.skill-list {
+    list-style: none;
+}
+
+.skill-list li {
+    padding: clamp(8px, 2vh, 10px) 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: clamp(14px, 2.2vw, 16px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.skill-list li::before {
+    content: "▹";
+    color: var(--primary);
+    font-size: clamp(18px, 3vw, 20px);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.skill-list li:hover {
+    color: var(--primary);
+    padding-left: 10px;
+}
+
+.skill-list li:hover::before {
+    transform: translateX(5px);
+}
+
+/* Projects Grid - Optimized */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(20px, 4vw, 35px);
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: clamp(20px, 4vw, 25px);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-15px);
+    border-color: var(--secondary);
+    box-shadow: 0 25px 70px rgba(0, 153, 255, 0.3);
+}
+
+.project-image {
+    width: 100%;
+    height: clamp(160px, 30vw, 220px);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(40px, 10vw, 64px);
+    color: rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-image::after {
+    transform: translateX(100%);
+}
+
+.project-info {
+    padding: clamp(20px, 4vw, 30px);
+}
+
+.project-info h3 {
+    font-size: clamp(18px, 3.5vw, 22px);
+    margin-bottom: clamp(12px, 2.5vh, 15px);
+    color: var(--light);
+    line-height: 1.3;
+}
+
+.project-info p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: clamp(14px, 2.2vw, 16px);
+    line-height: 1.7;
+    margin-bottom: clamp(15px, 3vh, 20px);
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(8px, 2vw, 10px);
+}
+
+.tag {
+    padding: clamp(5px, 1.2vw, 6px) clamp(12px, 2.5vw, 15px);
+    background: rgba(0, 153, 255, 0.1);
+    border: 1px solid var(--secondary);
+    border-radius: 50px;
+    color: var(--secondary);
+    font-size: clamp(10px, 1.8vw, 12px);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Education Grid */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(24px, 5vw, 36px);
+    margin-top: 60px;
+}
+
+.education-card {
+    position: relative;
+    display: flex;
+    gap: 22px;
+    padding: clamp(22px, 4vw, 30px);
+    border-radius: 20px;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.08),
+        rgba(255, 255, 255, 0.02)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.education-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+        120deg,
+        transparent 20%,
+        rgba(0, 255, 136, 0.25),
+        transparent 80%
+    );
+    opacity: 0;
+    transition: opacity 0.45s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    border-color: var(--primary);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(0, 255, 136, 0.15);
+}
+
+.education-card:hover::before {
+    opacity: 1;
+}
+
+.education-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #000;
+    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.35);
+    transition: transform 0.45s ease;
+}
+
+.education-card:hover .education-icon {
+    transform: rotate(-6deg) scale(1.1);
+}
+
+.education-content h3 {
+    font-size: clamp(17px, 3vw, 19px);
+    font-weight: 600;
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+}
+
+.education-school {
+    display: block;
+    font-size: clamp(13px, 2.5vw, 15px);
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.education-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.education-meta span {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    white-space: nowrap;
+}
+
+.education-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* Qualities Grid - Mobile Optimized */
+.qualities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr));
+    gap: clamp(15px, 3vw, 20px);
+}
+
+.quality-item {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: clamp(15px, 3vw, 20px);
+    padding: clamp(20px, 4vw, 30px);
+    text-align: center;
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+.quality-item:hover {
+    background: linear-gradient(
+        135deg,
+        rgba(0, 255, 136, 0.1),
+        rgba(0, 153, 255, 0.1)
+    );
+    border-color: var(--primary);
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 15px 50px rgba(0, 255, 136, 0.3);
+}
+
+.quality-item i {
+    font-size: clamp(28px, 6vw, 36px);
+    color: var(--primary);
+    margin-bottom: clamp(12px, 2.5vh, 15px);
+    display: block;
+}
+
+.quality-item span {
+    font-size: clamp(12px, 2.5vw, 16px);
+    font-weight: 600;
+    color: var(--light);
+    text-transform: uppercase;
+    letter-spacing: clamp(0.5px, 0.2vw, 1px);
+    line-height: 1.3;
+}
+
+@media (max-width: 640px) {
+    .education-card {
+        flex-direction: column;
+    }
+    
+    .education-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
