@@ -64,7 +64,7 @@
         <!-- Navigation -->
         <nav>
             <div class="nav-content">
-                <div class="logo">SA</div>
+                <div class="logo">MOH. SAHRUL ALAMSYAH</div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#education">Education</a></li>
@@ -171,7 +171,7 @@
                             <div class="image-container">
                                 <img
                                     src="{{
-                                        asset('assets/images/foto-sahrul.jpg')
+                                        asset('assets/images/alam.png')
                                     }}"
                                     alt="Sahrul Alamsyah"
                                 />
