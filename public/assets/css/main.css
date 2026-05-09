@@ -24,3 +24,83 @@
 /* Utilities */
 @import url('./utilities/animations.css');
 @import url('./utilities/media.css');
+/* ==========================================
+   PERFORMANCE OPTIMIZATION FOR MOBILE
+   Tambahkan di akhir main.css
+   ========================================== */
+
+/* GPU acceleration untuk elemen animasi */
+.star,
+.shape,
+.float-icon,
+.loader-ring,
+.glow-ring,
+.loading-progress-bar {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Kurangi animasi berat di mobile */
+@media (max-width: 768px) {
+
+    /* Matikan float-shape yang berat */
+    .shape {
+        animation: none !important;
+        opacity: 0.03 !important;
+    }
+
+    /* Kurangi jumlah star yang dirender */
+    .star:nth-child(n+51) {
+        display: none !important;
+    }
+
+    /* Sederhanakan twinkle */
+    .star {
+        animation-duration: 4s !important;
+    }
+
+    /* Matikan parallax effect */
+    .hero {
+        transform: none !important;
+    }
+
+    /* Kurangi float-icon */
+    .float-icon {
+        animation-duration: 4s !important;
+    }
+
+    /* Scroll animate lebih cepat */
+    .scroll-animate,
+    .scroll-animate-left,
+    .scroll-animate-right,
+    .scroll-animate-scale {
+        transition-duration: 0.4s !important;
+        transform: translateY(20px) !important;
+    }
+
+    .scroll-animate.active,
+    .scroll-animate-left.active,
+    .scroll-animate-right.active,
+    .scroll-animate-scale.active {
+        transform: none !important;
+    }
+
+    /* Matikan glow ring rotation */
+    .glow-ring {
+        animation: none !important;
+    }
+}
+
+/* Untuk HP low-end (layar kecil) */
+@media (max-width: 480px) {
+    .shape,
+    .float-icon,
+    .glow-ring {
+        display: none !important;
+    }
+
+    .star:nth-child(n+31) {
+        display: none !important;
+    }
+}
